@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- --- SECURITY ENHANCEMENTS --- -->
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta name="referrer" content="no-referrer-when-downgrade">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
@@ -13,12 +12,12 @@
     <style>
         /* --- DYNAMIC INDIAN FESTIVAL VISUAL THEME --- */
         :root {
-            --primary-color: #7A0016;    /* Deep Royal Festive Maroon-Red */
-            --accent-gold: #E5A93C;     /* Bright Metallic Gold */
-            --warm-shimmer: #F4E2C7;    /* Elegant Base Silk Gold tone */
-            --teal-peacock: #007A78;    /* Brand Accent from Logo */
-            --dark-velvet: #2A0006;     /* Deep contrast color */
-            --text-main: #3D2024;       /* Warm readable charcoal-crimson */
+            --primary-color: #7A0016; /* Deep Royal Festive Maroon-Red */
+            --accent-gold: #E5A93C; /* Bright Metallic Gold */
+            --warm-shimmer: #F4E2C7; /* Elegant Base Silk Gold tone */
+            --teal-peacock: #007A78; /* Brand Accent from Logo */
+            --dark-velvet: #2A0006; /* Deep contrast color */
+            --text-main: #3D2024; /* Warm readable charcoal-crimson */
         }
 
         * {
@@ -82,6 +81,13 @@
             font-weight: bold;
             letter-spacing: 1px;
             border-bottom: 2px solid var(--accent-gold);
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .top-ticker marquee {
+            display: inline-block;
+            vertical-align: middle;
         }
 
         /* Navigation Bar Layout */
@@ -649,66 +655,30 @@
 
         /* --- MEDIA QUERIES FOR LAPTOP, TABLET & MOBILE RESPONSIVENESS --- */
         @media (max-width: 992px) {
-            .hero-banner h1 {
-                font-size: 2.3rem;
-            }
-            .section-headline {
-                font-size: 1.8rem;
-            }
+            .hero-banner h1 { font-size: 2.3rem; }
+            .section-headline { font-size: 1.8rem; }
         }
 
         @media (max-width: 768px) {
-            .nav-container {
-                justify-content: center;
-                text-align: center;
-                padding: 15px 10px;
-            }
-            .nav-controls {
-                width: 100%;
-                justify-content: center;
-                gap: 12px;
-                flex-wrap: wrap;
-            }
-            .hero-banner {
-                padding: 50px 15px;
-            }
-            .hero-banner h1 {
-                font-size: 1.9rem;
-            }
-            .hero-banner p {
-                font-size: 1rem;
-            }
-            .live-rakhi-side {
-                width: 35px; /* Smaller layout icons on mobile screens */
-                opacity: 0.15;
-            }
+            .nav-container { justify-content: center; text-align: center; padding: 15px 10px; }
+            .nav-controls { width: 100%; justify-content: center; gap: 12px; flex-wrap: wrap; }
+            .hero-banner { padding: 50px 15px; }
+            .hero-banner h1 { font-size: 1.9rem; }
+            .hero-banner p { font-size: 1rem; }
+            .live-rakhi-side { width: 35px; opacity: 0.15; }
         }
 
         @media (max-width: 480px) {
-            .brand-logo-block {
-                flex-direction: column;
-                gap: 6px;
-            }
-            .brand-text-container {
-                align-items: center;
-            }
-            .nav-controls {
-                gap: 8px;
-            }
-            .nav-controls a, .owner-access-gate, .action-trigger-btn {
-                font-size: 0.8rem;
-                padding: 6px 10px;
-            }
-            .showcase-grid {
-                grid-template-columns: 1fr;
-            }
+            .brand-logo-block { flex-direction: column; gap: 6px; }
+            .brand-text-container { align-items: center; }
+            .nav-controls { gap: 8px; }
+            .nav-controls a, .owner-access-gate, .action-trigger-btn { font-size: 0.8rem; padding: 6px 10px; }
+            .showcase-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <!-- --- LIVE FLOATING THEME DECORATIONS --- -->
-    <!-- Safe vector graphics acting as live decorative floating background objects -->
     <svg class="live-rakhi-side rakhi-left-1" viewBox="0 0 100 100">
         <circle cx="50" cy="50" r="30" fill="#7A0016" stroke="#E5A93C" stroke-width="3"/>
         <circle cx="50" cy="50" r="15" fill="#E5A93C"/>
@@ -730,13 +700,12 @@
         <line x1="0" y1="50" x2="100" y2="50" stroke="#7A0016" stroke-width="2"/>
     </svg>
 
-    <!-- Red Header Announcement Strip -->
-    <div class="top-ticker">✨ CELEBRATE RAKSHA BANDHAN 2026 — PREMIUM HANDCRAFTED RAKHIS ✨</div>
+    <div class="top-ticker">
+        <marquee scrollamount="6">✨ PJ RAKHI HANDCRAFTED TRADITION LIVE ✨ CELEBRATE RAKSHA BANDHAN 2026 — PREMIUM HANDCRAFTED RAKHIS ✨</marquee>
+    </div>
 
-    <!-- Header Navigation Interface -->
     <header>
         <div class="nav-container">
-            <!-- Top Left Logo Block (UNTOUCHED) -->
             <a href="#" class="brand-logo-block">
                 <div class="css-logo-badge">
                     <span class="css-logo-text">PJ</span>
@@ -760,7 +729,6 @@
         </div>
     </header>
 
-    <!-- Hero Identity Showcase Section -->
     <section class="hero-banner">
         <div class="hero-art-icon">
             <svg viewBox="0 0 400 120" width="100%" height="80">
@@ -780,16 +748,13 @@
         <a href="#collection" class="cta-btn" style="background-color: var(--accent-gold); color: var(--dark-velvet); padding: 12px 28px; text-decoration: none; font-weight: bold; font-family: sans-serif; border-radius: 20px; display: inline-block;">Browse Catalog</a>
     </section>
 
-    <!-- Showcase Grid Display -->
     <section class="main-showcase" id="collection">
         <h2 class="section-headline">Festive Highlights</h2>
         
         <div class="showcase-grid" id="catalogGrid">
-            <!-- Dynamic data drops down here -->
-        </div>
+            </div>
     </section>
 
-    <!-- Side-sliding Shopping Box Cart Drawer -->
     <div class="cart-slide-drawer" id="checkoutDrawer">
         <div class="drawer-header">
             <h3>Your Shopping Box</h3>
@@ -799,7 +764,6 @@
         <div class="drawer-scroll-area">
             <div id="drawerItemsWrap"></div>
 
-            <!-- Payment & Shipping Input Fields -->
             <div class="checkout-modular-expansion" id="checkoutFormSection">
                 <h4>Delivery & Payment Route</h4>
                 <div class="form-field-set">
@@ -836,7 +800,6 @@
         </div>
     </div>
 
-    <!-- Hidden Owner Access Panel Control Panel -->
     <section class="dashboard-panel" id="ownerConsolePanel">
         <h2>Owner Inventory Control Station</h2>
         <form onsubmit="insertNewProductItem(event)">
@@ -871,15 +834,13 @@
         </form>
     </section>
 
-    <!-- Footer Block -->
     <footer>
         <div class="footer-details-line">
-            Support Hotline: <a href="tel:+9193147040">91+9193147040</a> | Base Operations: Agra, India
+            Support Hotline: <a href="tel:+919193147040">+91 9193147040</a> | Base Operations: Agra, India
         </div>
         <p>&copy; 2026 PJ Plus Rakhi. Premium Handcrafted Trademarks.</p>
     </footer>
 
-    <!-- --- CORE APPLICATION ENGINE --- -->
     <script>
         const baselineProductsData = [
             {
@@ -967,7 +928,6 @@
 
         function insertNewProductItem(event) {
             event.preventDefault();
-            
             const title = document.getElementById('addTitle').value;
             const price = parseInt(document.getElementById('addPrice').value);
             const oldPrice = document.getElementById('addOldPrice').value ? parseInt(document.getElementById('addOldPrice').value) : null;
@@ -985,7 +945,6 @@
 
             globalCatalog.push(newlyCreatedObj);
             localStorage.setItem('pj_stored_inventory_data', JSON.stringify(globalCatalog));
-            
             syncCatalogLayoutDisplay();
 
             document.getElementById('addTitle').value = '';
@@ -1066,9 +1025,18 @@
                 viewWrap.appendChild(itemRow);
             });
 
+            // Calculate extra delivery cost if selected
+            const deliveryElement = document.getElementById('deliverySpeed');
+            if (checkoutPhaseActivated && deliveryElement && deliveryElement.value === 'NextDay') {
+                financialSumTotal += 50; 
+            }
+
             countBadge.innerText = cumulativePiecesCount;
             totalDisplay.innerText = `₹${financialSumTotal}`;
         }
+
+        // Listens to delivery dropdown changes to update live total
+        document.getElementById('deliverySpeed')?.addEventListener('change', refreshCartDisplayMetrics);
 
         function handleCheckoutProcessing() {
             if(dynamicCart.length === 0) {
@@ -1082,20 +1050,54 @@
             if (!checkoutPhaseActivated) {
                 checkoutPhaseActivated = true;
                 moduleForm.style.display = 'block';
-                actionButton.innerText = "Place Order & Dispatch";
-                actionButton.style.backgroundColor = "#7A0016";
+                actionButton.innerText = "Place Order via WhatsApp";
+                actionButton.style.backgroundColor = "#7A0016"; // Keeping theme color identical
+                refreshCartDisplayMetrics(); // Refresh total to apply standard/premium delivery logic
             } else {
                 const addressValue = document.getElementById('shippingAddress').value.trim();
                 const phoneValue = document.getElementById('recipientPhone').value.trim();
                 const paymentMethodSelected = document.getElementById('paymentOption').value;
+                const deliverySelect = document.getElementById('deliverySpeed');
+                const deliveryMode = deliverySelect.options[deliverySelect.selectedIndex].text;
 
                 if(!addressValue || !phoneValue) {
                     alert("Please provide valid shipping details and smartphone destination information.");
                     return;
                 }
 
-                alert(`Order Booked Successfully!\n\nDestination: ${addressValue}\nContact: ${phoneValue}\nPayment Route chosen: ${paymentMethodSelected}\n\nYour premium Rakhi package will be dispatched shortly!`);
+                // Compile WhatsApp Message
+                let orderMessage = `*✨ NEW RAKHI ORDER ✨*\n\n`;
+                orderMessage += `*🛍️ Order Items:*\n`;
                 
+                let orderTotal = 0;
+                dynamicCart.forEach(unit => {
+                    orderMessage += `▫️ ${unit.qty}x ${unit.title} - ₹${unit.price * unit.qty}\n`;
+                    orderTotal += (unit.price * unit.qty);
+                });
+
+                if (deliverySelect.value === 'NextDay') {
+                    orderTotal += 50;
+                }
+
+                orderMessage += `\n*💵 Total Amount:* ₹${orderTotal}\n`;
+                orderMessage += `*💳 Payment Route:* ${paymentMethodSelected}\n`;
+                orderMessage += `*🚚 Delivery Mode:* ${deliveryMode}\n\n`;
+                
+                orderMessage += `*📍 Customer Details:*\n`;
+                orderMessage += `Phone: ${phoneValue}\n`;
+                orderMessage += `Address: ${addressValue}`;
+
+                // Using the specific phone number given 
+                const whatsappNumber = "919193147040"; 
+                const encodedMessage = encodeURIComponent(orderMessage);
+                const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+                // Redirect user to WhatsApp
+                window.open(whatsappURL, '_blank');
+
+                alert(`Order processing initialized via WhatsApp!\n\nDestination: ${addressValue}\nContact: ${phoneValue}\n\nYour premium Rakhi package will be dispatched shortly!`);
+                
+                // Reset cart
                 dynamicCart = [];
                 refreshCartDisplayMetrics();
                 toggleCartDrawer(false);
