@@ -3,264 +3,1076 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PJ Rakhi - Premium Handcrafted Tradition</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- --- SECURITY ENHANCEMENTS --- -->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    
+    <title>PJ Plus Rakhi | Premium Handcrafted Traditions</title>
     <style>
+        /* --- DYNAMIC INDIAN FESTIVAL VISUAL THEME --- */
         :root {
-            --primary: #800020; 
-            --secondary: #D4AF37; 
-            --dark: #222222;
-            --light: #FFFDF9; 
-            --grey: #f4f4f4;
+            --primary-color: #7A0016;    /* Deep Royal Festive Maroon-Red */
+            --accent-gold: #E5A93C;     /* Bright Metallic Gold */
+            --warm-shimmer: #F4E2C7;    /* Elegant Base Silk Gold tone */
+            --teal-peacock: #007A78;    /* Brand Accent from Logo */
+            --dark-velvet: #2A0006;     /* Deep contrast color */
+            --text-main: #3D2024;       /* Warm readable charcoal-crimson */
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-        body { background-color: var(--light); color: var(--dark); overflow-x: hidden; }
-        .marquee-container {
-            background-color: var(--primary);
-            color: #ffffff;
-            overflow: hidden;
-            white-space: nowrap;
-            padding: 10px 0;
-            font-size: 14px;
-            font-weight: 600;
-            letter-spacing: 1.5px;
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Georgia', 'Times New Roman', serif;
+        }
+
+        body {
+            background-color: var(--warm-shimmer);
+            color: var(--text-main);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(229, 169, 60, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 85% 15%, rgba(122, 0, 22, 0.12) 0%, transparent 35%),
+                radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.6) 0%, rgba(244, 226, 199, 0.9) 100%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="30" fill="none" stroke="%23e5a93c" stroke-width="0.5" stroke-opacity="0.08" stroke-dasharray="2,4"/></svg>');
+            background-attachment: fixed;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* --- LIVE FLOATING RAKHI THEME ELEMENTS (MOVING AT SIDES) --- */
+        .live-rakhi-side {
+            position: fixed;
+            top: -10%;
+            width: 50px;
+            height: auto;
+            pointer-events: none;
+            z-index: 10;
+            opacity: 0.25;
+            filter: drop-shadow(0 4px 8px rgba(122,0,22,0.3));
+            animation: floatDownLinear 18s linear infinite;
+        }
+
+        .rakhi-left-1 { left: 2%; animation-delay: 0s; }
+        .rakhi-left-2 { left: 5%; animation-delay: 6s; animation-duration: 22s; }
+        .rakhi-right-1 { right: 2%; animation-delay: 3s; animation-duration: 20s; }
+        .rakhi-right-2 { right: 5%; animation-delay: 9s; animation-duration: 25s; }
+
+        @keyframes floatDownLinear {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                top: -10%;
+            }
+            100% {
+                transform: translateY(120vh) rotate(360deg);
+                top: 100%;
+            }
+        }
+
+        /* Top Announcement Ticker */
+        .top-ticker {
+            background-color: var(--primary-color);
+            color: #FFFFFF;
+            text-align: center;
+            padding: 8px 10px;
+            font-size: 0.85rem;
+            font-family: sans-serif;
+            font-weight: bold;
+            letter-spacing: 1px;
+            border-bottom: 2px solid var(--accent-gold);
+        }
+
+        /* Navigation Bar Layout */
+        header {
+            background-color: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(122, 0, 22, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(229, 169, 60, 0.3);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10px 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        /* Pure CSS Logo Badge block style */
+        .brand-logo-block {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .css-logo-badge {
+            width: 44px;
+            height: 44px;
+            background: radial-gradient(circle, var(--teal-peacock) 70%, #005654 100%);
+            border: 2px solid var(--accent-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+            position: relative;
+        }
+
+        .css-logo-badge::after {
+            content: '';
+            position: absolute;
+            width: 36px;
+            height: 36px;
+            border: 1px dashed rgba(229, 169, 60, 0.6);
+            border-radius: 50%;
+        }
+
+        .css-logo-text {
+            color: #FFFDF9;
+            font-family: 'Georgia', serif;
+            font-weight: bold;
+            font-size: 1.25rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            z-index: 2;
+            letter-spacing: -0.5px;
+        }
+
+        .brand-text-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-title {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            line-height: 1;
+            letter-spacing: 0.5px;
+        }
+
+        .brand-title span {
+            color: var(--accent-gold);
+        }
+
+        .brand-subtitle {
+            font-size: 10px;
+            font-family: sans-serif;
             text-transform: uppercase;
-            border-bottom: 2px solid var(--secondary);
+            letter-spacing: 1.5px;
+            color: var(--teal-peacock);
+            margin-top: 4px;
+            font-weight: bold;
         }
-        .marquee-content { display: inline-block; animation: scroll-marquee 20s linear infinite; }
-        .marquee-content span { padding-right: 50px; }
-        @keyframes scroll-marquee {
-            0% { transform: translateX(0%); }
-            100% { transform: translateX(-50%); }
+
+        .nav-controls {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            align-items: center;
         }
-        header { background-color: #ffffff; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; }
-        .nav-container { max-width: 1200px; margin: 0 auto; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--primary); text-decoration: none; }
-        .logo span { color: var(--secondary); }
-        .cart-icon-btn { background: none; border: none; font-size: 22px; color: var(--primary); cursor: pointer; position: relative; transition: transform 0.2s; }
-        .cart-icon-btn:hover { transform: scale(1.1); }
-        .cart-count { position: absolute; top: -8px; right: -10px; background-color: var(--secondary); color: var(--primary); font-size: 12px; font-weight: 700; width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
-        .hero { background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1624314138470-5a2f24623f10?q=80&w=1600&auto=format&fit=crop') no-repeat center center/cover; height: 450px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: #ffffff; padding: 20px; }
-        .hero h1 { font-family: 'Playfair Display', serif; font-size: 48px; margin-bottom: 15px; color: var(--secondary); }
-        .hero p { font-size: 18px; max-width: 600px; margin-bottom: 25px; font-weight: 300; }
-        .hero-btn { background-color: var(--secondary); color: var(--primary); padding: 12px 30px; text-decoration: none; font-weight: 600; border-radius: 4px; transition: all 0.3s; text-transform: uppercase; letter-spacing: 1px; }
-        .hero-btn:hover { background-color: #ffffff; color: var(--primary); transform: translateY(-2px); }
-        .main-container { max-width: 1200px; margin: 60px auto; padding: 0 20px; }
-        .section-title { text-align: center; font-family: 'Playfair Display', serif; font-size: 36px; margin-bottom: 40px; position: relative; color: var(--primary); }
-        .section-title::after { content: ''; width: 80px; height: 3px; background-color: var(--secondary); position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
-        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .product-card { background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.04); transition: transform 0.3s, box-shadow 0.3s; border: 1px solid rgba(212, 175, 55, 0.1); display: flex; flex-direction: column; justify-content: space-between; }
-        .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-        .product-img { width: 100%; height: 280px; object-fit: cover; }
-        .product-info { padding: 20px; text-align: center; }
-        .product-name { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 600; margin-bottom: 8px; color: var(--dark); }
-        .product-desc { font-size: 13px; color: #666; margin-bottom: 15px; height: 40px; overflow: hidden; }
-        .product-price { font-size: 22px; font-weight: 700; color: var(--primary); margin-bottom: 20px; }
-        .add-to-cart-btn { width: 100%; background-color: var(--primary); color: #ffffff; border: none; padding: 12px; font-size: 15px; font-weight: 500; cursor: pointer; border-radius: 4px; transition: background 0.3s; display: flex; align-items: center; justify-content: center; gap: 8px; }
-        .add-to-cart-btn:hover { background-color: #550015; }
-        .cart-sidebar { position: fixed; top: 0; right: -400px; width: 100%; max-width: 400px; height: 100%; background-color: #ffffff; box-shadow: -5px 0 25px rgba(0,0,0,0.15); z-index: 1000; transition: right 0.3s ease; display: flex; flex-direction: column; }
-        .cart-sidebar.active { right: 0; }
-        .cart-header { padding: 20px; background-color: var(--primary); color: #ffffff; display: flex; justify-content: space-between; align-items: center; }
-        .cart-header h2 { font-family: 'Playfair Display', serif; font-size: 22px; }
-        .close-cart { background: none; border: none; color: #ffffff; font-size: 22px; cursor: pointer; }
-        .cart-body { flex: 1; overflow-y: auto; padding: 20px; }
-        .cart-item { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #eee; }
-        .cart-item-info h4 { font-size: 15px; font-weight: 600; }
-        .cart-item-info p { font-size: 13px; color: var(--primary); font-weight: 600; }
-        .remove-item-btn { background: none; border: none; color: #ff4d4d; cursor: pointer; font-size: 16px; }
-        .cart-empty-msg { text-align: center; color: #888; margin-top: 40px; }
-        .cart-footer { padding: 20px; border-top: 1px solid #eee; background-color: #fafafa; }
-        .cart-total { display: flex; justify-content: space-between; font-size: 18px; font-weight: 700; margin-bottom: 20px; color: var(--dark); }
-        .checkout-btn { width: 100%; background-color: var(--secondary); color: var(--primary); border: none; padding: 14px; font-size: 16px; font-weight: 600; cursor: pointer; border-radius: 4px; text-transform: uppercase; letter-spacing: 1px; transition: background 0.3s; }
-        .checkout-btn:hover { background-color: #c49e2e; }
-        .checkout-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 1001; display: none; align-items: center; justify-content: center; padding: 20px; }
-        .checkout-overlay.active { display: flex; }
-        .checkout-modal { background-color: #ffffff; width: 100%; max-width: 500px; border-radius: 8px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.2); animation: slideUp 0.3s ease; }
-        @keyframes slideUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-        .checkout-modal-header { background-color: var(--primary); color: #ffffff; padding: 20px; display: flex; justify-content: space-between; align-items: center; }
-        .checkout-modal-header h3 { font-family: 'Playfair Display', serif; font-size: 20px; }
-        .close-checkout { background: none; border: none; color: #ffffff; font-size: 20px; cursor: pointer; }
-        .checkout-form { padding: 25px; }
-        .form-group { margin-bottom: 18px; }
-        .form-group label { display: block; font-size: 14px; font-weight: 500; margin-bottom: 6px; color: #333; }
-        .form-group input, .form-group textarea { width: 100%; padding: 10px 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; outline: none; transition: border-color 0.2s; }
-        .form-group input:focus, .form-group textarea:focus { border-color: var(--primary); }
-        .whatsapp-submit-btn { width: 100%; background-color: #25D366; color: #ffffff; border: none; padding: 14px; font-size: 16px; font-weight: 600; cursor: pointer; border-radius: 4px; display: flex; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3); transition: background 0.3s, transform 0.2s; }
-        .whatsapp-submit-btn:hover { background-color: #1ebd57; transform: translateY(-1px); }
-        .order-summary-box { background-color: var(--grey); padding: 15px; border-radius: 4px; margin-bottom: 20px; font-size: 14px; border-left: 4px solid var(--secondary); }
-        footer { background-color: #111111; color: #888888; text-align: center; padding: 30px 20px; font-size: 14px; border-top: 3px solid var(--secondary); margin-top: 80px; }
-        footer p span { color: #ffffff; }
+
+        .nav-controls a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            font-family: sans-serif;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .nav-controls a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Action Buttons */
+        .action-trigger-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: 1px solid var(--accent-gold);
+            padding: 8px 16px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            font-family: sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            box-shadow: 0 2px 8px rgba(122,0,22,0.2);
+        }
+
+        .action-trigger-btn:hover {
+            background-color: var(--dark-velvet);
+        }
+
+        .counter-badge {
+            background-color: var(--accent-gold);
+            color: var(--dark-velvet);
+            border-radius: 50%;
+            padding: 1px 6px;
+            font-size: 0.75rem;
+        }
+
+        .owner-access-gate {
+            background-color: transparent;
+            color: var(--teal-peacock);
+            padding: 6px 12px;
+            border: 1px solid var(--teal-peacock);
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            font-family: sans-serif;
+            font-size: 0.8rem;
+        }
+
+        .owner-access-gate:hover {
+            background-color: var(--teal-peacock);
+            color: white;
+        }
+
+        /* Hero Banner with Rakhi theme */
+        .hero-banner {
+            position: relative;
+            background: linear-gradient(rgba(42, 0, 6, 0.82), rgba(122, 0, 22, 0.88)), 
+                        url('https://images.unsplash.com/photo-1659985955000-8ca9ba98fdf7?auto=format&fit=crop&q=80&w=1200') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 70px 20px;
+            border-bottom: 3px solid var(--accent-gold);
+        }
+
+        .hero-art-icon {
+            margin-bottom: 15px;
+            filter: drop-shadow(0 4px 8px rgba(229,169,60,0.5));
+        }
+
+        .hero-banner h1 {
+            font-size: 2.8rem;
+            color: var(--accent-gold);
+            margin-bottom: 12px;
+            text-shadow: 1px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-banner p {
+            font-size: 1.15rem;
+            max-width: 600px;
+            margin: 0 auto 25px;
+            color: #F5EAE1;
+            font-family: sans-serif;
+            line-height: 1.5;
+        }
+
+        /* Showcase Grid Sections */
+        .main-showcase {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .section-headline {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 35px;
+            position: relative;
+        }
+
+        .section-headline::after {
+            content: '';
+            display: block;
+            width: 120px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+            margin: 10px auto 0;
+        }
+
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        /* Premium Product Grid Cards */
+        .item-card {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(229, 169, 60, 0.3);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(122, 0, 22, 0.04);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .item-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent-gold);
+            box-shadow: 0 12px 25px rgba(122, 0, 22, 0.12);
+        }
+
+        .item-media-frame {
+            height: 240px;
+            background-color: #FFFDF9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            border-bottom: 1px solid rgba(229, 169, 60, 0.15);
+        }
+
+        .item-media-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .item-tag {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-velvet));
+            color: white;
+            font-size: 0.7rem;
+            font-weight: bold;
+            font-family: sans-serif;
+            padding: 4px 10px;
+            border-radius: 20px;
+            border: 1px solid var(--accent-gold);
+            z-index: 5;
+        }
+
+        .owner-delete-trigger {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background-color: #C62828;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            font-family: sans-serif;
+            cursor: pointer;
+            display: none;
+            z-index: 5;
+        }
+
+        .item-details-body {
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-grow: 1;
+        }
+
+        .item-title {
+            font-size: 1.1rem;
+            color: var(--dark-velvet);
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .item-pricing {
+            font-size: 1.25rem;
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .item-pricing span {
+            font-size: 0.9rem;
+            text-decoration: line-through;
+            color: #7D6B6D;
+            margin-left: 6px;
+        }
+
+        .cart-action-btn {
+            background-color: white;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 8px 15px;
+            width: 100%;
+            border-radius: 20px;
+            font-weight: bold;
+            font-family: sans-serif;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.85rem;
+        }
+
+        .cart-action-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* --- SHOPPING CART DRAWER --- */
+        .cart-slide-drawer {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            max-width: 400px;
+            height: 100%;
+            background-color: white;
+            box-shadow: -10px 0 30px rgba(0,0,0,0.15);
+            z-index: 200;
+            transition: right 0.4s cubic-bezier(0.05, 0.74, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            border-left: 4px solid var(--accent-gold);
+        }
+
+        .cart-slide-drawer.active {
+            right: 0;
+        }
+
+        .drawer-header {
+            background-color: var(--primary-color);
+            padding: 20px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--accent-gold);
+        }
+
+        .drawer-header h3 {
+            color: var(--accent-gold);
+            font-size: 1.3rem;
+        }
+
+        .drawer-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        .drawer-scroll-area {
+            padding: 20px;
+            flex-grow: 1;
+            overflow-y: auto;
+        }
+
+        .cart-product-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 12px;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #EFEBE4;
+        }
+
+        .cart-product-info h4 {
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .cart-product-info p {
+            font-family: sans-serif;
+            font-size: 0.85rem;
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-top: 2px;
+        }
+
+        .cart-product-delete {
+            background: none;
+            border: none;
+            color: #B71C1C;
+            cursor: pointer;
+            font-family: sans-serif;
+            font-size: 0.8rem;
+        }
+
+        /* Interactive Checkout Block Extensions */
+        .checkout-modular-expansion {
+            margin-top: 20px;
+            background-color: #FFF9EE;
+            border: 1px solid rgba(229, 169, 60, 0.4);
+            border-radius: 8px;
+            padding: 15px;
+            display: none;
+        }
+
+        .checkout-modular-expansion h4 {
+            font-size: 1rem;
+            color: var(--primary-color);
+            margin-bottom: 12px;
+            border-bottom: 1px solid rgba(122,0,22,0.1);
+            padding-bottom: 4px;
+        }
+
+        .form-field-set {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .form-field-set label {
+            font-family: sans-serif;
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: var(--text-main);
+        }
+
+        .form-field-set input, .form-field-set select {
+            padding: 8px;
+            border: 1px solid #CCC0AE;
+            border-radius: 4px;
+            font-family: sans-serif;
+            font-size: 0.85rem;
+            background-color: white;
+        }
+
+        .drawer-summary-footer {
+            padding: 20px;
+            background-color: #FDF9F2;
+            border-top: 1px solid #EFEBE4;
+        }
+
+        .summary-total-bar {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.15rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .primary-action-btn {
+            background-color: var(--teal-peacock);
+            color: white;
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            font-family: sans-serif;
+            box-shadow: 0 3px 10px rgba(0,122,120,0.2);
+        }
+
+        .primary-action-btn:hover {
+            background-color: #015452;
+        }
+
+        /* --- INVENTORY DASHBOARD PANEL --- */
+        .dashboard-panel {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 25px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 2px dashed var(--teal-peacock);
+            border-radius: 10px;
+            display: none;
+        }
+
+        .dashboard-panel h2 {
+            color: var(--teal-peacock);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .panel-inputs-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+            align-items: flex-end;
+        }
+
+        .input-box-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .input-box-wrapper label {
+            font-family: sans-serif;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+
+        .input-box-wrapper input, .input-box-wrapper select {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: sans-serif;
+        }
+
+        .dashboard-submit-btn {
+            background-color: var(--teal-peacock);
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            font-family: sans-serif;
+        }
+
+        footer {
+            background-color: var(--dark-velvet);
+            color: #E2D3D5;
+            text-align: center;
+            padding: 35px 20px;
+            margin-top: 50px;
+            border-top: 3px solid var(--accent-gold);
+        }
+
+        .footer-details-line {
+            margin-bottom: 12px;
+            font-family: sans-serif;
+            font-size: 1rem;
+        }
+
+        .footer-details-line a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* --- MEDIA QUERIES FOR LAPTOP, TABLET & MOBILE RESPONSIVENESS --- */
+        @media (max-width: 992px) {
+            .hero-banner h1 {
+                font-size: 2.3rem;
+            }
+            .section-headline {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                justify-content: center;
+                text-align: center;
+                padding: 15px 10px;
+            }
+            .nav-controls {
+                width: 100%;
+                justify-content: center;
+                gap: 12px;
+                flex-wrap: wrap;
+            }
+            .hero-banner {
+                padding: 50px 15px;
+            }
+            .hero-banner h1 {
+                font-size: 1.9rem;
+            }
+            .hero-banner p {
+                font-size: 1rem;
+            }
+            .live-rakhi-side {
+                width: 35px;
+                opacity: 0.15;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .brand-logo-block {
+                flex-direction: column;
+                gap: 6px;
+            }
+            .brand-text-container {
+                align-items: center;
+            }
+            .nav-controls {
+                gap: 8px;
+            }
+            .nav-controls a, .owner-access-gate, .action-trigger-btn {
+                font-size: 0.8rem;
+                padding: 6px 10px;
+            }
+            .showcase-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="marquee-container">
-        <div class="marquee-content">
-            <span>✨ PJ Rakhi Handcrafted Tradition Live - Order Premium Rakhis Now! ✨</span>
-            <span>✨ PJ Rakhi Handcrafted Tradition Live - Order Premium Rakhis Now! ✨</span>
-            <span>✨ PJ Rakhi Handcrafted Tradition Live - Order Premium Rakhis Now! ✨</span>
-            <span>✨ PJ Rakhi Handcrafted Tradition Live - Order Premium Rakhis Now! ✨</span>
-        </div>
-    </div>
+
+    <!-- --- LIVE FLOATING THEME DECORATIONS --- -->
+    <svg class="live-rakhi-side rakhi-left-1" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="30" fill="#7A0016" stroke="#E5A93C" stroke-width="3"/>
+        <circle cx="50" cy="50" r="15" fill="#E5A93C"/>
+        <line x1="0" y1="50" x2="100" y2="50" stroke="#E5A93C" stroke-width="4"/>
+    </svg>
+    <svg class="live-rakhi-side rakhi-left-2" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="25" fill="#007A78" stroke="#E5A93C" stroke-width="2"/>
+        <circle cx="50" cy="50" r="10" fill="#7A0016"/>
+        <line x1="0" y1="50" x2="100" y2="50" stroke="#7A0016" stroke-width="2"/>
+    </svg>
+    <svg class="live-rakhi-side rakhi-right-1" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="30" fill="#7A0016" stroke="#E5A93C" stroke-width="3"/>
+        <circle cx="50" cy="50" r="15" fill="#E5A93C"/>
+        <line x1="0" y1="50" x2="100" y2="50" stroke="#E5A93C" stroke-width="4"/>
+    </svg>
+    <svg class="live-rakhi-side rakhi-right-2" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="25" fill="#007A78" stroke="#E5A93C" stroke-width="2"/>
+        <circle cx="50" cy="50" r="10" fill="#7A0016"/>
+        <line x1="0" y1="50" x2="100" y2="50" stroke="#7A0016" stroke-width="2"/>
+    </svg>
+
+    <div class="top-ticker">✨ CELEBRATE RAKSHA BANDHAN 2026 — PREMIUM HANDCRAFTED RAKHIS ✨</div>
+
     <header>
         <div class="nav-container">
-            <a href="#" class="logo">PJ <span>Rakhi</span></a>
-            <button class="cart-icon-btn" onclick="toggleCart(true)">
-                <i class="fa-solid fa-shopping-bag"></i>
-                <div class="cart-count" id="cartCount">0</div>
-            </button>
+            <a href="#" class="brand-logo-block">
+                <div class="css-logo-badge">
+                    <span class="css-logo-text">PJ</span>
+                </div>
+                <div class="brand-text-container">
+                    <div class="brand-title">PJ Plus <span>Rakhi</span></div>
+                    <div class="brand-subtitle">Handcrafted Traditions</div>
+                </div>
+            </a>
+            
+            <ul class="nav-controls">
+                <li><a href="#">Home</a></li>
+                <li><a href="#collection">Collection</a></li>
+                <li><button class="owner-access-gate" onclick="promptOwnerAccess()">Owner Access</button></li>
+                <li>
+                    <button class="action-trigger-btn" onclick="toggleCartDrawer(true)">
+                        Cart Box <span class="counter-badge" id="globalCartCounter">0</span>
+                    </button>
+                </li>
+            </ul>
         </div>
     </header>
-    <section class="hero">
-        <h1>Premium Handcrafted Rakhi</h1>
-        <p>Celebrate the unbreakable bond of love and protection with our beautifully intricate, artisan-crafted premium Rakhis.</p>
-        <a href="#products" class="hero-btn">Explore Collection</a>
+
+    <section class="hero-banner">
+        <div class="hero-art-icon">
+            <svg viewBox="0 0 400 120" width="100%" height="80">
+                <circle cx="200" cy="60" r="38" fill="none" stroke="var(--accent-gold)" stroke-width="1.5" stroke-dasharray="3,3"/>
+                <circle cx="200" cy="60" r="30" fill="none" stroke="var(--accent-gold)" stroke-width="1"/>
+                <path d="M 40 60 Q 120 20 200 60" fill="none" stroke="var(--accent-gold)" stroke-width="2"/>
+                <path d="M 200 60 Q 280 100 360 60" fill="none" stroke="var(--accent-gold)" stroke-width="2"/>
+                <path d="M 40 60 Q 120 100 200 60" fill="none" stroke="white" stroke-width="0.75"/>
+                <path d="M 200 60 Q 280 20 360 60" fill="none" stroke="white" stroke-width="0.75"/>
+                <circle cx="200" cy="60" r="14" fill="var(--primary-color)" stroke="var(--accent-gold)" stroke-width="1.5"/>
+                <circle cx="200" cy="60" r="4" fill="var(--teal-peacock)" />
+                <text x="200" y="112" fill="var(--accent-gold)" font-size="12" text-anchor="middle" font-weight="bold" letter-spacing="3">Sneh Bandhan • Raksha Bandhan 2026</text>
+            </svg>
+        </div>
+        <h1>Handcrafted Threads of Love</h1>
+        <p>Bringing premium traditional designer rakhis and sacred thali elements straight to your sibling celebrations with absolute elegance.</p>
+        <a href="#collection" class="cta-btn" style="background-color: var(--accent-gold); color: var(--dark-velvet); padding: 12px 28px; text-decoration: none; font-weight: bold; font-family: sans-serif; border-radius: 20px; display: inline-block;">Browse Catalog</a>
     </section>
-    <main class="main-container" id="products">
-        <h2 class="section-title">Our Exclusive Collection</h2>
-        <div class="products-grid" id="productsGrid"></div>
-    </main>
-    <div class="cart-sidebar" id="cartSidebar">
-        <div class="cart-header">
-            <h2>Your Shopping Cart</h2>
-            <button class="close-cart" onclick="toggleCart(false)"><i class="fa-solid fa-xmark"></i></button>
+
+    <section class="main-showcase" id="collection">
+        <h2 class="section-headline">Festive Highlights</h2>
+        <div class="showcase-grid" id="catalogGrid">
+            <!-- Dynamic products render here -->
         </div>
-        <div class="cart-body" id="cartItemsContainer"></div>
-        <div class="cart-footer">
-            <div class="cart-total">
-                <span>Total Amount:</span>
-                <span id="cartTotalAmount">₹0</span>
+    </section>
+
+    <!-- Side-sliding Shopping Box Cart Drawer -->
+    <div class="cart-slide-drawer" id="checkoutDrawer">
+        <div class="drawer-header">
+            <h3>Your Shopping Box</h3>
+            <button class="drawer-close" onclick="toggleCartDrawer(false)">&times;</button>
+        </div>
+        
+        <div class="drawer-scroll-area">
+            <div id="drawerItemsWrap"></div>
+
+            <!-- Payment & Shipping Input Fields -->
+            <div class="checkout-modular-expansion" id="checkoutFormSection">
+                <h4>Delivery & Payment Route</h4>
+                <div class="form-field-set">
+                    <label for="shippingAddress">Full Shipping Address</label>
+                    <input type="text" id="shippingAddress" placeholder="House/Flat No, Street, City, Pincode" required>
+                </div>
+                <div class="form-field-set">
+                    <label for="recipientPhone">Contact Mobile Number</label>
+                    <input type="tel" id="recipientPhone" placeholder="10-digit number" required>
+                </div>
+                <div class="form-field-set">
+                    <label for="paymentOption">Choose Payment Method</label>
+                    <select id="paymentOption">
+                        <option value="UPI">UPI (Google Pay / PhonePe / Paytm)</option>
+                        <option value="COD">Cash on Delivery (COD)</option>
+                    </select>
+                </div>
+                <div class="form-field-set">
+                    <label for="deliverySpeed">Delivery Mode</label>
+                    <select id="deliverySpeed" onchange="syncCartViewDisplay()">
+                        <option value="Standard">Standard Express (Free Delivery)</option>
+                        <option value="NextDay">Next-Day Premium Delivery (+₹50)</option>
+                    </select>
+                </div>
             </div>
-            <button class="checkout-btn" onclick="openCheckoutModal()">Proceed to Order</button>
+        </div>
+
+        <div class="drawer-summary-footer">
+            <div class="summary-total-bar">
+                <span>Total Value:</span>
+                <span id="drawerCalculatedTotal">₹0</span>
+            </div>
+            <button class="primary-action-btn" id="checkoutSubmitActionBtn" onclick="handleCheckoutProcessing()">Proceed to Checkout</button>
         </div>
     </div>
-    <div class="checkout-overlay" id="checkoutOverlay">
-        <div class="checkout-modal">
-            <div class="checkout-modal-header">
-                <h3>Delivery & Order Details</h3>
-                <button class="close-checkout" onclick="closeCheckoutModal()"><i class="fa-solid fa-xmark"></i></button>
+
+    <!-- Hidden Owner Access Panel Control Panel -->
+    <section class="dashboard-panel" id="ownerConsolePanel">
+        <h2>Owner Inventory Control Station</h2>
+        <form onsubmit="insertNewProductItem(event)">
+            <div class="panel-inputs-row">
+                <div class="input-box-wrapper">
+                    <label for="addTitle">Rakhi Item Name</label>
+                    <input type="text" id="addTitle" placeholder="e.g., Designer Zardosi Rakhi" required>
+                </div>
+                <div class="input-box-wrapper">
+                    <label for="addPrice">Our Price (₹)</label>
+                    <input type="number" id="addPrice" placeholder="249" required>
+                </div>
+                <div class="input-box-wrapper">
+                    <label for="addOldPrice">Crossed Price (₹)</label>
+                    <input type="number" id="addOldPrice" placeholder="499">
+                </div>
+                <div class="input-box-wrapper">
+                    <label for="addImg">Image link</label>
+                    <input type="text" id="addImg" placeholder="https://link.com/photo.jpg">
+                </div>
+                <div class="input-box-wrapper">
+                    <label for="addTag">Tag Badge</label>
+                    <select id="addTag">
+                        <option value="">No Label</option>
+                        <option value="Bestseller">Bestseller</option>
+                        <option value="New">New</option>
+                        <option value="Premium">Premium</option>
+                    </select>
+                </div>
+                <button type="submit" class="dashboard-submit-btn">Publish Item Live</button>
             </div>
-            <form class="checkout-form" id="orderForm" onsubmit="handleOrderSubmit(event)">
-                <div class="order-summary-box">
-                    <strong>Order Total: </strong> <span id="modalTotalAmount">₹0</span>
-                </div>
-                <div class="form-group">
-                    <label for="custName">Your Full Name *</label>
-                    <input type="text" id="custName" required placeholder="Enter your full name">
-                </div>
-                <div class="form-group">
-                    <label for="custPhone">Your Phone Number *</label>
-                    <input type="tel" id="custPhone" required placeholder="Enter your mobile number">
-                </div>
-                <div class="form-group">
-                    <label for="custAddress">Full Delivery Address (with Pincode) *</label>
-                    <textarea id="custAddress" rows="4" required placeholder="House No., Street Name, Landmark, City, State, Pincode"></textarea>
-                </div>
-                <button type="submit" class="whatsapp-submit-btn">
-                    <i class="fa-brands fa-whatsapp"></i> Send Order via WhatsApp
-                </button>
-            </form>
-        </div>
-    </div>
+        </form>
+    </section>
+
     <footer>
-        <p>&copy; 2026 <span>PJ Rakhi</span>. Premium Handcrafted Traditions Live. All Rights Reserved.</p>
+        <div class="footer-details-line">
+            Support Hotline: <a href="tel:+9193147040">+91 93147040</a> | Base Operations: Agra, India
+        </div>
+        <p>&copy; 2026 PJ Plus Rakhi. Premium Handcrafted Trademarks.</p>
     </footer>
+
+    <!-- --- CORE APPLICATION ENGINE --- -->
     <script>
-        const products = [
-            { id: 1, name: "Royal Zardosi Handcrafted Rakhi", price: 299, desc: "Intricately designed gold thread embroidery with elegant beads.", image: "https://images.unsplash.com/photo-1624314138470-5a2f24623f10?w=500&auto=format&fit=crop&q=60" },
-            { id: 2, name: "Premium Sandalwood Designer Rakhi", price: 349, desc: "Authentic scented organic sandalwood beads tailored perfectly.", image: "https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?w=500&auto=format&fit=crop&q=60" },
-            { id: 3, name: "Elegant Kundan Crafted Rakhi", price: 399, desc: "Stunning premium Kundan stone centerpiece with comfortable silk bands.", image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500&auto=format&fit=crop&q=60" },
-            { id: 4, name: "Pure Silver Filigree Rakhi", price: 499, desc: "Exquisite real silver artisan crafted artwork for lifetime memory.", image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=500&auto=format&fit=crop&q=60" }
+        const baselineProductsData = [
+            {
+                id: 101,
+                title: "Divine Pearl Rudraksha Masterpiece",
+                price: 199,
+                oldPrice: 399,
+                badge: "Bestseller",
+                img: "https://images.unsplash.com/photo-1621932953986-15fcfec81467?auto=format&fit=crop&q=80&w=600"
+            },
+            {
+                id: 102,
+                title: "Premium Silver Bhaiya Bhabhi Lumba Set",
+                price: 499,
+                oldPrice: 899,
+                badge: "Premium",
+                img: "https://images.unsplash.com/photo-1659985954625-7df219ffba29?auto=format&fit=crop&q=80&w=600"
+            },
+            {
+                id: 103,
+                title: "Kids Ganesha Magic Eco-Rakhi",
+                price: 120,
+                oldPrice: 199,
+                badge: "New",
+                img: "https://images.unsplash.com/photo-1590005354167-6da97870c913?auto=format&fit=crop&q=80&w=600"
+            }
         ];
-        let cart = [];
-        const whatsappTargetNumber = "919193147040"; 
-        function displayProducts() {
-            const grid = document.getElementById('productsGrid');
-            grid.innerHTML = products.map(product => `
-                <div class="product-card">
-                    <img src="${product.image}" alt="${product.name}" class="product-img">
-                    <div class="product-info">
-                        <h3 class="product-name">${product.name}</h3>
-                        <p class="product-desc">${product.desc}</p>
-                        <div class="product-price">₹${product.price}</div>
-                        <button class="add-to-cart-btn" onclick="addToCart(${product.id})">
-                            <i class="fa-solid fa-cart-plus"></i> Add To Cart
-                        </button>
+
+        let globalCatalog = JSON.parse(localStorage.getItem('pj_stored_inventory_data'));
+        if (!globalCatalog || globalCatalog.length === 0) {
+            globalCatalog = baselineProductsData;
+            localStorage.setItem('pj_stored_inventory_data', JSON.stringify(globalCatalog));
+        }
+
+        let dynamicCart = [];
+        let ownerConsoleAuthorized = false;
+        let checkoutPhaseActivated = false;
+
+        function syncCatalogLayoutDisplay() {
+            const grid = document.getElementById('catalogGrid');
+            grid.innerHTML = '';
+
+            globalCatalog.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'item-card';
+                
+                const frameContent = item.img ? `<img src="${item.img}" alt="${item.title}">` : `<span>[ ${item.title} ]</span>`;
+                const strikePrice = item.oldPrice ? `<span>₹${item.oldPrice}</span>` : '';
+
+                card.innerHTML = `
+                    <div class="item-media-frame">
+                        ${item.badge ? `<span class="item-tag">${item.badge}</span>` : ''}
+                        <button class="owner-delete-trigger" style="display: ${ownerConsoleAuthorized ? 'block' : 'none'}" onclick="purgeProductItem(${item.id})">Purge</button>
+                        ${frameContent}
                     </div>
-                </div>
-            `).join('');
+                    <div class="item-details-body">
+                        <h3 class="item-title">${item.title}</h3>
+                        <div class="item-pricing">₹${item.price} ${strikePrice}</div>
+                        <button class="cart-action-btn" onclick="appendItemToCart(${item.id})">Add to Shopping Box</button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
         }
-        function toggleCart(open) {
-            const sidebar = document.getElementById('cartSidebar');
-            if(open) { sidebar.classList.add('active'); } else { sidebar.classList.remove('active'); }
+
+        function toggleCartDrawer(openStatus) {
+            const drawer = document.getElementById('checkoutDrawer');
+            if (openStatus) {
+                drawer.classList.add('active');
+            } else {
+                drawer.classList.remove('active');
+            }
         }
-        function addToCart(id) {
-            const product = products.find(p => p.id === id);
-            const cartItem = cart.find(item => item.id === id);
-            if(cartItem) { cartItem.quantity += 1; } else { cart.push({ ...product, quantity: 1 }); }
-            updateCartUI();
-            toggleCart(true);
+
+        function appendItemToCart(productId) {
+            const product = globalCatalog.find(item => item.id === productId);
+            if (product) {
+                dynamicCart.push(product);
+                syncCartViewDisplay();
+                toggleCartDrawer(true);
+            }
         }
-        function removeCartItem(id) {
-            cart = cart.filter(item => item.id !== id);
-            updateCartUI();
+
+        function dropCartItem(cartIndex) {
+            dynamicCart.splice(cartIndex, 1);
+            syncCartViewDisplay();
         }
-        function updateCartUI() {
-            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-            document.getElementById('cartCount').innerText = totalItems;
-            const container = document.getElementById('cartItemsContainer');
-            if(cart.length === 0) {
-                container.innerHTML = `<p class="cart-empty-msg">Your shopping cart is empty.</p>`;
-                document.getElementById('cartTotalAmount').innerText = "₹0";
+
+        function syncCartViewDisplay() {
+            const container = document.getElementById('drawerItemsWrap');
+            const totalDisplay = document.getElementById('drawerCalculatedTotal');
+            const counterBadge = document.getElementById('globalCartCounter');
+            const checkoutFormSection = document.getElementById('checkoutFormSection');
+            const actionBtn = document.getElementById('checkoutSubmitActionBtn');
+
+            counterBadge.innerText = dynamicCart.length;
+            container.innerHTML = '';
+
+            if (dynamicCart.length === 0) {
+                container.innerHTML = `<p style='text-align:center; font-family:sans-serif; color:#7D6B6D; padding:40px 0;'>Your shopping box is currently empty.</p>`;
+                totalDisplay.innerText = '₹0';
+                checkoutFormSection.style.display = 'none';
+                actionBtn.innerText = 'Proceed to Checkout';
+                checkoutPhaseActivated = false;
                 return;
             }
-            container.innerHTML = cart.map(item => `
-                <div class="cart-item">
-                    <div class="cart-item-info">
-                        <h4>${item.name}</h4>
-                        <p>${item.quantity} x ₹${item.price}</p>
+
+            let subTotal = 0;
+            dynamicCart.forEach((item, index) => {
+                subTotal += item.price;
+                const row = document.createElement('div');
+                row.className = 'cart-product-row';
+                row.innerHTML = `
+                    <div class="cart-product-info">
+                        <h4>${item.title}</h4>
+                        <p>₹${item.price}</p>
                     </div>
-                    <button class="remove-item-btn" onclick="removeCartItem(${item.id})">
-                        <i class="fa-solid fa-trash-can"></i>
-                    </button>
-                </div>
-            `).join('');
-            const grandTotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-            document.getElementById('cartTotalAmount').innerText = "₹" + grandTotal;
+                    <button class="cart-product-delete" onclick="dropCartItem(${index})">Remove</button>
+                `;
+                container.appendChild(row);
+            });
+
+            const deliverySpeed = document.getElementById('deliverySpeed').value;
+            if (deliverySpeed === 'NextDay' && checkoutPhaseActivated) {
+                subTotal += 50;
+            }
+
+            totalDisplay.innerText = `₹${subTotal}`;
         }
-        function openCheckoutModal() {
-            if(cart.length === 0) { alert("Please add at least one product to your cart first!"); return; }
-            toggleCart(false);
-            const grandTotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-            document.getElementById('modalTotalAmount').innerText = "₹" + grandTotal;
-            document.getElementById('checkoutOverlay').classList.add('active');
+
+        function handleCheckoutProcessing() {
+            if (!checkoutPhaseActivated) {
+                checkoutPhaseActivated = true;
+                document.getElementById('checkoutFormSection').style.display = 'block';
+                document.getElementById('checkoutSubmitActionBtn').innerText = 'Confirm & Order Now';
+                syncCartViewDisplay();
+            } else {
+                const addr = document.getElementById('shippingAddress').value.trim();
+                const phone = document.getElementById('recipientPhone').value.trim();
+                
+                if (!addr || !phone) {
+                    alert('Please enter valid delivery details to process your festive shipment.');
+                    return;
+                }
+
+                alert(`✨ Order Placed Successfully!\nYour handcrafted traditions are secured.\n\nDelivery Track: Sent to ${addr}\nContact No: ${phone}`);
+                dynamicCart = [];
+                checkoutPhaseActivated = false;
+                syncCartViewDisplay();
+                toggleCartDrawer(false);
+            }
         }
-        function closeCheckoutModal() { document.getElementById('checkoutOverlay').classList.remove('active'); }
-        function handleOrderSubmit(event) {
-            event.preventDefault();
-            const name = document.getElementById('custName').value;
-            const phone = document.getElementById('custPhone').value;
-            const address = document.getElementById('custAddress').value;
-            const grandTotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-            let message = `🛍️ *NEW ORDER RECEIVED - PJ RAKHI* 🛍️\n`;
-            message += `--------------------------------------\n\n`;
-            message += `👤 *Customer Name:* ${name}\n`;
-            message += `📞 *Customer Phone:* ${phone}\n`;
-            message += `📍 *Delivery Address:* ${address}\n\n`;
-            message += `🛒 *Items Ordered:* \n`;
-            cart.forEach((item, index) => { message += `${index + 1}. ${item.name} (Qty: ${item.quantity}) - ₹${item.price * item.quantity}\n`; });
-            message += `\n💰 *Total Order Value:* ₹${grandTotal}\n`;
-            message += `--------------------------------------\n`;
-            message += `✨ _Please confirm my handcrafted order!_`;
-            const encodedMessage = encodeURIComponent(message);
-            const whatsappURL = `https://wa.me/${whatsappTargetNumber}?text=${encodedMessage}`;
-            cart = [];
-            updateCartUI();
-            document.getElementById('orderForm').reset();
-            closeCheckoutModal();
-            window.open(whatsappURL, '_blank');
+
+        function promptOwnerAccess() {
+            const passkey = prompt("Enter Administration Verification Passkey:");
+            if (passkey === "admin123") {
+                ownerConsoleAuthorized = true;
+                document.getElementById('ownerConsolePanel').style.display = 'block';
+                alert("Access Authorized. Dashboard Panel Activated.");
+                syncCatalogLayoutDisplay();
+            } else {
+                alert("Verification failed. Access Denied.");
+            }
         }
-        displayProducts();
+
+        function insertNewProductItem(e) {
+            e.preventDefault();
+            const title = document.getElementById('addTitle').value.trim();
+            const price = parseInt(document.getElementById('addPrice').value);
+            const oldPrice = parseInt(document.getElementById('addOldPrice').value) || null;
+            const img = document.getElementById('addImg').value.trim();
+            const badge = document.getElementById('addTag').value;
+
+            const newItem = {
+                id: Date.now(),
+                title,
+                price,
+                oldPrice,
+                badge,
+                img
+            };
+
+            globalCatalog.push(newItem);
+            localStorage.setItem('pj_stored_inventory_data', JSON.stringify(globalCatalog));
+            syncCatalogLayoutDisplay();
+            e.target.reset();
+        }
+
+        function purgeProductItem(productId) {
+            if (confirm("Are you sure you want to remove this item from the storefront catalog?")) {
+                globalCatalog = globalCatalog.filter(item => item.id !== productId);
+                localStorage.setItem('pj_stored_inventory_data', JSON.stringify(globalCatalog));
+                syncCatalogLayoutDisplay();
+            }
+        }
+
+        // Initialize Store on Application Bootstrap
+        window.addEventListener('DOMContentLoaded', () => {
+            syncCatalogLayoutDisplay();
+            syncCartViewDisplay();
+        });
     </script>
 </body>
 </html>
