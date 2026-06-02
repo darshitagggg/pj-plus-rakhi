@@ -3,29 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta name="referrer" content="no-referrer-when-downgrade">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    
     <title>PJ Plus Rakhi | Premium Handcrafted Traditions</title>
     <style>
-        /* --- DYNAMIC INDIAN FESTIVAL VISUAL THEME --- */
         :root {
-            --primary-color: #7A0016; /* Deep Royal Festive Maroon-Red */
-            --accent-gold: #E5A93C; /* Bright Metallic Gold */
-            --warm-shimmer: #F4E2C7; /* Elegant Base Silk Gold tone */
-            --teal-peacock: #007A78; /* Brand Accent from Logo */
-            --dark-velvet: #2A0006; /* Deep contrast color */
-            --text-main: #3D2024; /* Warm readable charcoal-crimson */
+            --primary-color: #7A0016;
+            --accent-gold: #E5A93C;
+            --warm-shimmer: #F4E2C7;
+            --teal-peacock: #007A78;
+            --dark-velvet: #2A0006;
+            --text-main: #3D2024;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Georgia', 'Times New Roman', serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Georgia', 'Times New Roman', serif; }
 
         body {
             background-color: var(--warm-shimmer);
@@ -41,664 +33,64 @@
             position: relative;
         }
 
-        /* --- LIVE FLOATING RAKHI THEME ELEMENTS (MOVING AT SIDES) --- */
-        .live-rakhi-side {
-            position: fixed;
-            top: -10%;
-            width: 50px;
-            height: auto;
-            pointer-events: none;
-            z-index: 10;
-            opacity: 0.25;
-            filter: drop-shadow(0 4px 8px rgba(122,0,22,0.3));
-            animation: floatDownLinear 18s linear infinite;
-        }
-
+        .live-rakhi-side { position: fixed; top: -10%; width: 50px; height: auto; pointer-events: none; z-index: 10; opacity: 0.25; filter: drop-shadow(0 4px 8px rgba(122,0,22,0.3)); animation: floatDownLinear 18s linear infinite; }
         .rakhi-left-1 { left: 2%; animation-delay: 0s; }
         .rakhi-left-2 { left: 5%; animation-delay: 6s; animation-duration: 22s; }
         .rakhi-right-1 { right: 2%; animation-delay: 3s; animation-duration: 20s; }
         .rakhi-right-2 { right: 5%; animation-delay: 9s; animation-duration: 25s; }
 
-        @keyframes floatDownLinear {
-            0% {
-                transform: translateY(0) rotate(0deg);
-                top: -10%;
-            }
-            100% {
-                transform: translateY(120vh) rotate(360deg);
-                top: 100%;
-            }
-        }
-
-        /* Top Announcement Ticker */
-        .top-ticker {
-            background-color: var(--primary-color);
-            color: #FFFFFF;
-            text-align: center;
-            padding: 8px 10px;
-            font-size: 0.85rem;
-            font-family: sans-serif;
-            font-weight: bold;
-            letter-spacing: 1px;
-            border-bottom: 2px solid var(--accent-gold);
-            overflow: hidden;
-            white-space: nowrap;
-        }
-
-        .top-ticker marquee {
-            display: inline-block;
-            vertical-align: middle;
-        }
-
-        /* Navigation Bar Layout */
-        header {
-            background-color: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 20px rgba(122, 0, 22, 0.08);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid rgba(229, 169, 60, 0.3);
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 10px 20px;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        /* Pure CSS Logo Badge block style */
-        .brand-logo-block {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-        }
-
-        .css-logo-badge {
-            width: 44px;
-            height: 44px;
-            background: radial-gradient(circle, var(--teal-peacock) 70%, #005654 100%);
-            border: 2px solid var(--accent-gold);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.15);
-            position: relative;
-        }
-
-        .css-logo-badge::after {
-            content: '';
-            position: absolute;
-            width: 36px;
-            height: 36px;
-            border: 1px dashed rgba(229, 169, 60, 0.6);
-            border-radius: 50%;
-        }
-
-        .css-logo-text {
-            color: #FFFDF9;
-            font-family: 'Georgia', serif;
-            font-weight: bold;
-            font-size: 1.25rem;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-            z-index: 2;
-            letter-spacing: -0.5px;
-        }
-
-        .brand-text-container {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .brand-title {
-            font-size: 24px;
-            font-weight: 800;
-            color: var(--primary-color);
-            line-height: 1;
-            letter-spacing: 0.5px;
-        }
-
-        .brand-title span {
-            color: var(--accent-gold);
-        }
-
-        .brand-subtitle {
-            font-size: 10px;
-            font-family: sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--teal-peacock);
-            margin-top: 4px;
-            font-weight: bold;
-        }
-
-        .nav-controls {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-            align-items: center;
-        }
-
-        .nav-controls a {
-            text-decoration: none;
-            color: var(--text-main);
-            font-weight: 600;
-            font-family: sans-serif;
-            font-size: 0.9rem;
-            transition: color 0.2s;
-        }
-
-        .nav-controls a:hover {
-            color: var(--primary-color);
-        }
-
-        /* Action Buttons */
-        .action-trigger-btn {
-            background-color: var(--primary-color);
-            color: white;
-            border: 1px solid var(--accent-gold);
-            padding: 8px 16px;
-            border-radius: 30px;
-            cursor: pointer;
-            font-weight: bold;
-            font-family: sans-serif;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 0.85rem;
-            box-shadow: 0 2px 8px rgba(122,0,22,0.2);
-        }
-
-        .action-trigger-btn:hover {
-            background-color: var(--dark-velvet);
-        }
-
-        .counter-badge {
-            background-color: var(--accent-gold);
-            color: var(--dark-velvet);
-            border-radius: 50%;
-            padding: 1px 6px;
-            font-size: 0.75rem;
-        }
-
-        .owner-access-gate {
-            background-color: transparent;
-            color: var(--teal-peacock);
-            padding: 6px 12px;
-            border: 1px solid var(--teal-peacock);
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: bold;
-            font-family: sans-serif;
-            font-size: 0.8rem;
-        }
-
-        .owner-access-gate:hover {
-            background-color: var(--teal-peacock);
-            color: white;
-        }
-
-        /* Hero Banner with Rakhi theme */
-        .hero-banner {
-            position: relative;
-            background: linear-gradient(rgba(42, 0, 6, 0.82), rgba(122, 0, 22, 0.88)), 
-                        url('https://images.unsplash.com/photo-1659985955000-8ca9ba98fdf7?auto=format&fit=crop&q=80&w=1200') center/cover no-repeat;
-            color: white;
-            text-align: center;
-            padding: 70px 20px;
-            border-bottom: 3px solid var(--accent-gold);
-        }
-
-        .hero-art-icon {
-            margin-bottom: 15px;
-            filter: drop-shadow(0 4px 8px rgba(229,169,60,0.5));
-        }
-
-        .hero-banner h1 {
-            font-size: 2.8rem;
-            color: var(--accent-gold);
-            margin-bottom: 12px;
-            text-shadow: 1px 2px 4px rgba(0,0,0,0.5);
-        }
-
-        .hero-banner p {
-            font-size: 1.15rem;
-            max-width: 600px;
-            margin: 0 auto 25px;
-            color: #F5EAE1;
-            font-family: sans-serif;
-            line-height: 1.5;
-        }
-
-        /* Showcase Grid Sections */
-        .main-showcase {
-            max-width: 1200px;
-            margin: 50px auto;
-            padding: 0 20px;
-        }
-
-        .section-headline {
-            text-align: center;
-            font-size: 2.2rem;
-            color: var(--primary-color);
-            margin-bottom: 35px;
-            position: relative;
-        }
-
-        .section-headline::after {
-            content: '';
-            display: block;
-            width: 120px;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
-            margin: 10px auto 0;
-        }
-
-        .showcase-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        /* Premium Product Grid Cards */
-        .item-card {
-            background: rgba(255, 255, 255, 0.9);
-            border: 1px solid rgba(229, 169, 60, 0.3);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 6px 15px rgba(122, 0, 22, 0.04);
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-        }
-
-        .item-card:hover {
-            transform: translateY(-6px);
-            border-color: var(--accent-gold);
-            box-shadow: 0 12px 25px rgba(122, 0, 22, 0.12);
-        }
-
-        .item-media-frame {
-            height: 240px;
-            background-color: #FFFDF9;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            border-bottom: 1px solid rgba(229, 169, 60, 0.15);
-        }
-
-        .item-media-frame img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .item-tag {
-            position: absolute;
-            top: 12px;
-            left: 12px;
-            background: linear-gradient(135deg, var(--primary-color), var(--dark-velvet));
-            color: white;
-            font-size: 0.7rem;
-            font-weight: bold;
-            font-family: sans-serif;
-            padding: 4px 10px;
-            border-radius: 20px;
-            border: 1px solid var(--accent-gold);
-            z-index: 5;
-        }
-
-        .owner-delete-trigger {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            background-color: #C62828;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-size: 0.7rem;
-            font-weight: bold;
-            font-family: sans-serif;
-            cursor: pointer;
-            display: none;
-            z-index: 5;
-        }
-
-        .item-details-body {
-            padding: 20px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            flex-grow: 1;
-        }
-
-        .item-title {
-            font-size: 1.1rem;
-            color: var(--dark-velvet);
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-
-        .item-pricing {
-            font-size: 1.25rem;
-            color: var(--primary-color);
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        .item-pricing span {
-            font-size: 0.9rem;
-            text-decoration: line-through;
-            color: #7D6B6D;
-            margin-left: 6px;
-        }
-
-        .cart-action-btn {
-            background-color: white;
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
-            padding: 8px 15px;
-            width: 100%;
-            border-radius: 20px;
-            font-weight: bold;
-            font-family: sans-serif;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            font-size: 0.85rem;
-        }
-
-        .cart-action-btn:hover {
-            background-color: var(--primary-color);
-            color: white;
-        }
-
-        /* --- SHOPPING CART DRAWER --- */
-        .cart-slide-drawer {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 100%;
-            max-width: 400px;
-            height: 100%;
-            background-color: white;
-            box-shadow: -10px 0 30px rgba(0,0,0,0.15);
-            z-index: 200;
-            transition: right 0.4s cubic-bezier(0.05, 0.74, 0.2, 1);
-            display: flex;
-            flex-direction: column;
-            border-left: 4px solid var(--accent-gold);
-        }
-
-        .cart-slide-drawer.active {
-            right: 0;
-        }
-
-        .drawer-header {
-            background-color: var(--primary-color);
-            padding: 20px;
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid var(--accent-gold);
-        }
-
-        .drawer-header h3 {
-            color: var(--accent-gold);
-            font-size: 1.3rem;
-        }
-
-        .drawer-close {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.8rem;
-            cursor: pointer;
-        }
-
-        .drawer-scroll-area {
-            padding: 20px;
-            flex-grow: 1;
-            overflow-y: auto;
-        }
-
-        .cart-product-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-bottom: 12px;
-            margin-bottom: 12px;
-            border-bottom: 1px solid #EFEBE4;
-        }
-
-        .cart-product-info h4 {
-            font-size: 0.95rem;
-            color: var(--text-main);
-        }
-
-        .cart-product-info p {
-            font-family: sans-serif;
-            font-size: 0.85rem;
-            color: var(--primary-color);
-            font-weight: bold;
-            margin-top: 2px;
-        }
-
-        .cart-product-delete {
-            background: none;
-            border: none;
-            color: #B71C1C;
-            cursor: pointer;
-            font-family: sans-serif;
-            font-size: 0.8rem;
-        }
-
-        /* Interactive Checkout Block Extensions */
-        .checkout-modular-expansion {
-            margin-top: 20px;
-            background-color: #FFF9EE;
-            border: 1px solid rgba(229, 169, 60, 0.4);
-            border-radius: 8px;
-            padding: 15px;
-            display: none;
-        }
-
-        .checkout-modular-expansion h4 {
-            font-size: 1rem;
-            color: var(--primary-color);
-            margin-bottom: 12px;
-            border-bottom: 1px solid rgba(122,0,22,0.1);
-            padding-bottom: 4px;
-        }
-
-        .form-field-set {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-bottom: 12px;
-        }
-
-        .form-field-set label {
-            font-family: sans-serif;
-            font-size: 0.8rem;
-            font-weight: bold;
-            color: var(--text-main);
-        }
-
-        .form-field-set input, .form-field-set select {
-            padding: 8px;
-            border: 1px solid #CCC0AE;
-            border-radius: 4px;
-            font-family: sans-serif;
-            font-size: 0.85rem;
-            background-color: white;
-        }
-
-        .drawer-summary-footer {
-            padding: 20px;
-            background-color: #FDF9F2;
-            border-top: 1px solid #EFEBE4;
-        }
-
-        .summary-total-bar {
-            display: flex;
-            justify-content: space-between;
-            font-size: 1.15rem;
-            font-weight: bold;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-
-        .primary-action-btn {
-            background-color: var(--teal-peacock);
-            color: white;
-            width: 100%;
-            padding: 12px;
-            border: none;
-            border-radius: 6px;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            font-family: sans-serif;
-            box-shadow: 0 3px 10px rgba(0,122,120,0.2);
-        }
-
-        .primary-action-btn:hover {
-            background-color: #015452;
-        }
-
-        /* --- INVENTORY DASHBOARD PANEL --- */
-        .dashboard-panel {
-            max-width: 1200px;
-            margin: 30px auto;
-            padding: 25px;
-            background-color: rgba(255, 255, 255, 0.9);
-            border: 2px dashed var(--teal-peacock);
-            border-radius: 10px;
-            display: none;
-        }
-
-        .dashboard-panel h2 {
-            color: var(--teal-peacock);
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-
-        .panel-inputs-row {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 12px;
-            align-items: flex-end;
-        }
-
-        .input-box-wrapper {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-
-        .input-box-wrapper label {
-            font-family: sans-serif;
-            font-weight: bold;
-            font-size: 0.8rem;
-        }
-
-        .input-box-wrapper input, .input-box-wrapper select {
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-family: sans-serif;
-        }
-
-        .dashboard-submit-btn {
-            background-color: var(--teal-peacock);
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 4px;
-            font-weight: bold;
-            cursor: pointer;
-            font-family: sans-serif;
-        }
-
-        footer {
-            background-color: var(--dark-velvet);
-            color: #E2D3D5;
-            text-align: center;
-            padding: 35px 20px;
-            margin-top: 50px;
-            border-top: 3px solid var(--accent-gold);
-        }
-
-        .footer-details-line {
-            margin-bottom: 12px;
-            font-family: sans-serif;
-            font-size: 1rem;
-        }
-
-        .footer-details-line a {
-            color: var(--accent-gold);
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        /* --- MEDIA QUERIES FOR LAPTOP, TABLET & MOBILE RESPONSIVENESS --- */
-        @media (max-width: 992px) {
-            .hero-banner h1 { font-size: 2.3rem; }
-            .section-headline { font-size: 1.8rem; }
-        }
-
-        @media (max-width: 768px) {
-            .nav-container { justify-content: center; text-align: center; padding: 15px 10px; }
-            .nav-controls { width: 100%; justify-content: center; gap: 12px; flex-wrap: wrap; }
-            .hero-banner { padding: 50px 15px; }
-            .hero-banner h1 { font-size: 1.9rem; }
-            .hero-banner p { font-size: 1rem; }
-            .live-rakhi-side { width: 35px; opacity: 0.15; }
-        }
-
-        @media (max-width: 480px) {
-            .brand-logo-block { flex-direction: column; gap: 6px; }
-            .brand-text-container { align-items: center; }
-            .nav-controls { gap: 8px; }
-            .nav-controls a, .owner-access-gate, .action-trigger-btn { font-size: 0.8rem; padding: 6px 10px; }
-            .showcase-grid { grid-template-columns: 1fr; }
-        }
+        @keyframes floatDownLinear { 0% { transform: translateY(0) rotate(0deg); top: -10%; } 100% { transform: translateY(120vh) rotate(360deg); top: 100%; } }
+
+        .top-ticker { background-color: var(--primary-color); color: #FFFFFF; text-align: center; padding: 8px 10px; font-size: 0.85rem; font-family: sans-serif; font-weight: bold; letter-spacing: 1px; border-bottom: 2px solid var(--accent-gold); overflow: hidden; white-space: nowrap; }
+
+        header { background-color: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(122, 0, 22, 0.08); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(229, 169, 60, 0.3); }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 10px 20px; flex-wrap: wrap; gap: 15px; }
+
+        .brand-logo-block { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .css-logo-badge { width: 44px; height: 44px; background: radial-gradient(circle, var(--teal-peacock) 70%, #005654 100%); border: 2px solid var(--accent-gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 6px rgba(0,0,0,0.15); position: relative; }
+        .css-logo-badge::after { content: ''; position: absolute; width: 36px; height: 36px; border: 1px dashed rgba(229, 169, 60, 0.6); border-radius: 50%; }
+        .css-logo-text { color: #FFFDF9; font-family: 'Georgia', serif; font-weight: bold; font-size: 1.25rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.3); z-index: 2; letter-spacing: -0.5px; }
+        .brand-text-container { display: flex; flex-direction: column; }
+        .brand-title { font-size: 24px; font-weight: 800; color: var(--primary-color); line-height: 1; letter-spacing: 0.5px; }
+        .brand-title span { color: var(--accent-gold); }
+        .brand-subtitle { font-size: 10px; font-family: sans-serif; text-transform: uppercase; letter-spacing: 1.5px; color: var(--teal-peacock); margin-top: 4px; font-weight: bold; }
+
+        .nav-controls { list-style: none; display: flex; gap: 20px; align-items: center; }
+        .nav-controls a { text-decoration: none; color: var(--text-main); font-weight: 600; font-family: sans-serif; font-size: 0.9rem; }
+
+        .action-trigger-btn { background-color: var(--primary-color); color: white; border: 1px solid var(--accent-gold); padding: 8px 16px; border-radius: 30px; cursor: pointer; font-weight: bold; font-family: sans-serif; display: flex; align-items: center; gap: 6px; font-size: 0.85rem; box-shadow: 0 2px 8px rgba(122,0,22,0.2); }
+        .counter-badge { background-color: var(--accent-gold); color: var(--dark-velvet); border-radius: 50%; padding: 1px 6px; font-size: 0.75rem; }
+
+        .hero-banner { position: relative; background: linear-gradient(rgba(42, 0, 6, 0.82), rgba(122, 0, 22, 0.88)), url('https://images.unsplash.com/photo-1659985955000-8ca9ba98fdf7?auto=format&fit=crop&q=80&w=1200') center/cover no-repeat; color: white; text-align: center; padding: 70px 20px; border-bottom: 3px solid var(--accent-gold); }
+        .hero-banner h1 { font-size: 2.8rem; color: var(--accent-gold); margin-bottom: 12px; text-shadow: 1px 2px 4px rgba(0,0,0,0.5); }
+        .hero-banner p { font-size: 1.15rem; max-width: 600px; margin: 0 auto 25px; color: #F5EAE1; font-family: sans-serif; line-height: 1.5; }
+
+        .main-showcase { max-width: 1200px; margin: 50px auto; padding: 0 20px; }
+        .section-headline { text-align: center; font-size: 2.2rem; color: var(--primary-color); margin-bottom: 35px; position: relative; }
+        .section-headline::after { content: ''; display: block; width: 120px; height: 3px; background: linear-gradient(90deg, transparent, var(--accent-gold), transparent); margin: 10px auto 0; }
+        .showcase-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+
+        .item-card { background: rgba(255, 255, 255, 0.9); border: 1px solid rgba(229, 169, 60, 0.3); border-radius: 12px; overflow: hidden; box-shadow: 0 6px 15px rgba(122, 0, 22, 0.04); display: flex; flex-direction: column; transition: transform 0.3s ease; }
+        .item-media-frame { height: 240px; background-color: #FFFDF9; display: flex; align-items: center; justify-content: center; position: relative; border-bottom: 1px solid rgba(229, 169, 60, 0.15); }
+        .item-tag { position: absolute; top: 12px; left: 12px; background: linear-gradient(135deg, var(--primary-color), var(--dark-velvet)); color: white; font-size: 0.7rem; font-weight: bold; padding: 4px 10px; border-radius: 20px; border: 1px solid var(--accent-gold); z-index: 5; }
+        .item-details-body { padding: 20px; text-align: center; flex-grow: 1; }
+        .item-title { font-size: 1.1rem; color: var(--dark-velvet); margin-bottom: 10px; font-weight: bold; }
+        .item-pricing { font-size: 1.25rem; color: var(--primary-color); font-weight: bold; margin-bottom: 15px; }
+        .item-pricing span { font-size: 0.9rem; text-decoration: line-through; color: #7D6B6D; margin-left: 6px; }
+        .cart-action-btn { background-color: white; border: 2px solid var(--primary-color); color: var(--primary-color); padding: 8px 15px; width: 100%; border-radius: 20px; cursor: pointer; font-weight: bold; }
+        .cart-action-btn:hover { background-color: var(--primary-color); color: white; }
+
+        .cart-slide-drawer { position: fixed; top: 0; right: -100%; width: 100%; max-width: 400px; height: 100%; background-color: white; z-index: 200; transition: right 0.4s; border-left: 4px solid var(--accent-gold); display: flex; flex-direction: column; }
+        .cart-slide-drawer.active { right: 0; }
+        .drawer-header { background-color: var(--primary-color); padding: 20px; color: white; display: flex; justify-content: space-between; align-items: center; }
+        .drawer-scroll-area { padding: 20px; flex-grow: 1; overflow-y: auto; }
+        .checkout-modular-expansion { margin-top: 20px; background-color: #FFF9EE; border: 1px solid rgba(229, 169, 60, 0.4); border-radius: 8px; padding: 15px; display: none; }
+        .primary-action-btn { background-color: var(--teal-peacock); color: white; width: 100%; padding: 12px; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; }
     </style>
 </head>
 <body>
 
-    <svg class="live-rakhi-side rakhi-left-1" viewBox="0 0 100 100">
-        <circle cx="50" cy="50" r="30" fill="#7A0016" stroke="#E5A93C" stroke-width="3"/>
-        <circle cx="50" cy="50" r="15" fill="#E5A93C"/>
-        <line x1="0" y1="50" x2="100" y2="50" stroke="#E5A93C" stroke-width="4"/>
-    </svg>
-    <svg class="live-rakhi-side rakhi-left-2" viewBox="0 0 100 100">
-        <circle cx="50" cy="50" r="25" fill="#007A78" stroke="#E5A93C" stroke-width="2"/>
-        <circle cx="50" cy="50" r="10" fill="#7A0016"/>
-        <line x1="0" y1="50" x2="100" y2="50" stroke="#7A0016" stroke-width="2"/>
-    </svg>
-    <svg class="live-rakhi-side rakhi-right-1" viewBox="0 0 100 100">
-        <circle cx="50" cy="50" r="30" fill="#7A0016" stroke="#E5A93C" stroke-width="3"/>
-        <circle cx="50" cy="50" r="15" fill="#E5A93C"/>
-        <line x1="0" y1="50" x2="100" y2="50" stroke="#E5A93C" stroke-width="4"/>
-    </svg>
-    <svg class="live-rakhi-side rakhi-right-2" viewBox="0 0 100 100">
-        <circle cx="50" cy="50" r="25" fill="#007A78" stroke="#E5A93C" stroke-width="2"/>
-        <circle cx="50" cy="50" r="10" fill="#7A0016"/>
-        <line x1="0" y1="50" x2="100" y2="50" stroke="#7A0016" stroke-width="2"/>
-    </svg>
+    <svg class="live-rakhi-side rakhi-left-1" viewBox="0 0 100 100"><circle cx="50" cy="50" r="30" fill="#7A0016" stroke="#E5A93C" stroke-width="3"/><circle cx="50" cy="50" r="15" fill="#E5A93C"/><line x1="0" y1="50" x2="100" y2="50" stroke="#E5A93C" stroke-width="4"/></svg>
 
     <div class="top-ticker">
         <marquee scrollamount="6">✨ PJ RAKHI HANDCRAFTED TRADITION LIVE ✨ CELEBRATE RAKSHA BANDHAN 2026 — PREMIUM HANDCRAFTED RAKHIS ✨</marquee>
@@ -707,19 +99,15 @@
     <header>
         <div class="nav-container">
             <a href="#" class="brand-logo-block">
-                <div class="css-logo-badge">
-                    <span class="css-logo-text">PJ</span>
-                </div>
+                <div class="css-logo-badge"><span class="css-logo-text">PJ</span></div>
                 <div class="brand-text-container">
                     <div class="brand-title">PJ Plus <span>Rakhi</span></div>
                     <div class="brand-subtitle">Handcrafted Traditions</div>
                 </div>
             </a>
-            
             <ul class="nav-controls">
                 <li><a href="#">Home</a></li>
                 <li><a href="#collection">Collection</a></li>
-                <li><button class="owner-access-gate" onclick="promptOwnerAccess()">Owner Access</button></li>
                 <li>
                     <button class="action-trigger-btn" onclick="toggleCartDrawer(true)">
                         Cart Box <span class="counter-badge" id="globalCartCounter">0</span>
@@ -730,388 +118,81 @@
     </header>
 
     <section class="hero-banner">
-        <div class="hero-art-icon">
-            <svg viewBox="0 0 400 120" width="100%" height="80">
-                <circle cx="200" cy="60" r="38" fill="none" stroke="var(--accent-gold)" stroke-width="1.5" stroke-dasharray="3,3"/>
-                <circle cx="200" cy="60" r="30" fill="none" stroke="var(--accent-gold)" stroke-width="1"/>
-                <path d="M 40 60 Q 120 20 200 60" fill="none" stroke="var(--accent-gold)" stroke-width="2"/>
-                <path d="M 200 60 Q 280 100 360 60" fill="none" stroke="var(--accent-gold)" stroke-width="2"/>
-                <path d="M 40 60 Q 120 100 200 60" fill="none" stroke="white" stroke-width="0.75"/>
-                <path d="M 200 60 Q 280 20 360 60" fill="none" stroke="white" stroke-width="0.75"/>
-                <circle cx="200" cy="60" r="14" fill="var(--primary-color)" stroke="var(--accent-gold)" stroke-width="1.5"/>
-                <circle cx="200" cy="60" r="4" fill="var(--teal-peacock)" />
-                <text x="200" y="112" fill="var(--accent-gold)" font-size="12" text-anchor="middle" font-weight="bold" letter-spacing="3">Sneh Bandhan • Raksha Bandhan 2026</text>
-            </svg>
-        </div>
         <h1>Handcrafted Threads of Love</h1>
         <p>Bringing premium traditional designer rakhis and sacred thali elements straight to your sibling celebrations with absolute elegance.</p>
-        <a href="#collection" class="cta-btn" style="background-color: var(--accent-gold); color: var(--dark-velvet); padding: 12px 28px; text-decoration: none; font-weight: bold; font-family: sans-serif; border-radius: 20px; display: inline-block;">Browse Catalog</a>
     </section>
 
     <section class="main-showcase" id="collection">
         <h2 class="section-headline">Festive Highlights</h2>
-        
-        <div class="showcase-grid" id="catalogGrid">
-            </div>
+        <div class="showcase-grid" id="catalogGrid"></div>
     </section>
 
     <div class="cart-slide-drawer" id="checkoutDrawer">
         <div class="drawer-header">
             <h3>Your Shopping Box</h3>
-            <button class="drawer-close" onclick="toggleCartDrawer(false)">&times;</button>
+            <button onclick="toggleCartDrawer(false)">&times;</button>
         </div>
-        
         <div class="drawer-scroll-area">
             <div id="drawerItemsWrap"></div>
-
             <div class="checkout-modular-expansion" id="checkoutFormSection">
                 <h4>Delivery & Payment Route</h4>
-                <div class="form-field-set">
-                    <label for="shippingAddress">Full Shipping Address</label>
-                    <input type="text" id="shippingAddress" placeholder="House/Flat No, Street, City, Pincode" required>
-                </div>
-                <div class="form-field-set">
-                    <label for="recipientPhone">Contact Mobile Number</label>
-                    <input type="tel" id="recipientPhone" placeholder="10-digit number" required>
-                </div>
-                <div class="form-field-set">
-                    <label for="paymentOption">Choose Payment Method</label>
-                    <select id="paymentOption">
-                        <option value="UPI">UPI (Google Pay / PhonePe / Paytm)</option>
-                        <option value="COD">Cash on Delivery (COD)</option>
-                    </select>
-                </div>
-                <div class="form-field-set">
-                    <label for="deliverySpeed">Delivery Mode</label>
-                    <select id="deliverySpeed">
-                        <option value="Standard">Standard Express (Free Delivery)</option>
-                        <option value="NextDay">Next-Day Premium Delivery (+₹50)</option>
-                    </select>
-                </div>
+                <input type="text" id="shippingAddress" placeholder="Address">
+                <input type="tel" id="recipientPhone" placeholder="Phone">
             </div>
         </div>
-
-        <div class="drawer-summary-footer">
-            <div class="summary-total-bar">
-                <span>Total Value:</span>
-                <span id="drawerCalculatedTotal">₹0</span>
-            </div>
+        <div style="padding:20px;">
             <button class="primary-action-btn" id="checkoutSubmitActionBtn" onclick="handleCheckoutProcessing()">Proceed to Checkout</button>
         </div>
     </div>
 
-    <section class="dashboard-panel" id="ownerConsolePanel">
-        <h2>Owner Inventory Control Station</h2>
-        <form onsubmit="insertNewProductItem(event)">
-            <div class="panel-inputs-row">
-                <div class="input-box-wrapper">
-                    <label for="addTitle">Rakhi Item Name</label>
-                    <input type="text" id="addTitle" placeholder="e.g., Designer Zardosi Rakhi" required>
-                </div>
-                <div class="input-box-wrapper">
-                    <label for="addPrice">Our Price (₹)</label>
-                    <input type="number" id="addPrice" placeholder="249" required>
-                </div>
-                <div class="input-box-wrapper">
-                    <label for="addOldPrice">Crossed Price (₹)</label>
-                    <input type="number" id="addOldPrice" placeholder="499">
-                </div>
-                <div class="input-box-wrapper">
-                    <label for="addImg">Image link</label>
-                    <input type="text" id="addImg" placeholder="https://link.com/photo.jpg">
-                </div>
-                <div class="input-box-wrapper">
-                    <label for="addTag">Tag Badge</label>
-                    <select id="addTag">
-                        <option value="">No Label</option>
-                        <option value="Bestseller">Bestseller</option>
-                        <option value="New">New</option>
-                        <option value="Premium">Premium</option>
-                    </select>
-                </div>
-                <button type="submit" class="dashboard-submit-btn">Publish Item Live</button>
-            </div>
-        </form>
-    </section>
-
-    <footer>
-        <div class="footer-details-line">
-            Support Hotline: <a href="tel:+919193147040">+91 9193147040</a> | Base Operations: Agra,rawatpara road India
-        </div>
-        <p>&copy; 2026 PJ Plus Rakhi. Premium Handcrafted Trademarks.</p>
-    </footer>
-
     <script>
-        const baselineProductsData = [
-            {
-                id: 101,
-                title: "Divine Pearl Rudraksha Masterpiece",
-                price: 199,
-                oldPrice: 399,
-                badge: "Bestseller",
-                img: "https://images.unsplash.com/photo-1621932953986-15fcfec81467?auto=format&fit=crop&q=80&w=600"
-            },
-            {
-                id: 108,
-                title: "royal rakhi",
-                price: 120,
-                oldPrice: 160,
-                badge: "Premium",
-                img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQutMsUUoLPayhOMKhoR_4HxOgqgsAo4zWeNg&s"
-            },
-            {
-                id: 103,
-                title: "Kids Ganesha ",
-                price: 120,
-                oldPrice: 190,
-                badge: "premium",
-                img: ""
-            }
+        // ADD YOUR PRODUCTS HERE
+        const globalCatalog = [
+            { id: 1, title: "Royal Rakhi", price: 200, oldPrice: 230, badge: "Premium", img: "" },
+            { id: 101, title: "Divine Pearl Rudraksha Masterpiece", price: 199, oldPrice: 399, badge: "Bestseller", img: "https://images.unsplash.com/photo-1621932953986-15fcfec81467?auto=format&fit=crop&q=80&w=600" }
         ];
 
-        let globalCatalog = JSON.parse(localStorage.getItem('pj_stored_inventory_data'));
-        if (!globalCatalog || globalCatalog.length === 0) {
-            globalCatalog = baselineProductsData;
-            localStorage.setItem('pj_stored_inventory_data', JSON.stringify(globalCatalog));
-        }
-
         let dynamicCart = [];
-        let ownerConsoleAuthorized = false;
         let checkoutPhaseActivated = false;
 
         function syncCatalogLayoutDisplay() {
             const grid = document.getElementById('catalogGrid');
             grid.innerHTML = '';
-
             globalCatalog.forEach(item => {
                 const card = document.createElement('div');
                 card.className = 'item-card';
-                
-                const frameContent = item.img ? `<img src="${item.img}" alt="${item.title}">` : `<span>[ ${item.title} ]</span>`;
-
                 card.innerHTML = `
                     <div class="item-media-frame">
                         ${item.badge ? `<span class="item-tag">${item.badge}</span>` : ''}
-                        <button class="owner-delete-trigger" style="display: ${ownerConsoleAuthorized ? 'block' : 'none'}" onclick="purgeProductItem(${item.id})">Purge</button>
-                        ${frameContent}
+                        <span>${item.title}</span>
                     </div>
                     <div class="item-details-body">
                         <h3 class="item-title">${item.title}</h3>
-                        <div class="item-pricing">
-                            ₹${item.price} ${item.oldPrice ? `<span>₹${item.oldPrice}</span>` : ''}
-                        </div>
-                        <button class="cart-action-btn" onclick="injectItemToCart(${item.id})">Add to Cart Box</button>
+                        <div class="item-pricing">₹${item.price} ${item.oldPrice ? `<span>₹${item.oldPrice}</span>` : ''}</div>
+                        <button class="cart-action-btn" onclick="injectItemToCart(${item.id})">Add to Cart</button>
                     </div>
                 `;
                 grid.appendChild(card);
             });
         }
 
-        function promptOwnerAccess() {
-            if (ownerConsoleAuthorized) {
-                ownerConsoleAuthorized = false;
-                document.getElementById('ownerConsolePanel').style.display = 'none';
-                syncCatalogLayoutDisplay();
-                return;
-            }
-
-            const checkoutPass = prompt("Enter secure Owner Password to modify shop listing data:");
-            if (checkoutPass === "9862darh") {
-                ownerConsoleAuthorized = true;
-                document.getElementById('ownerConsolePanel').style.display = 'block';
-                syncCatalogLayoutDisplay();
-                alert("Identity verified. Authorization online.");
-            } else if (checkoutPass !== null) {
-                alert("Unauthorized Access Attempt.");
-            }
-        }
-
-        function insertNewProductItem(event) {
-            event.preventDefault();
-            const title = document.getElementById('addTitle').value;
-            const price = parseInt(document.getElementById('addPrice').value);
-            const oldPrice = document.getElementById('addOldPrice').value ? parseInt(document.getElementById('addOldPrice').value) : null;
-            const img = document.getElementById('addImg').value;
-            const badge = document.getElementById('addTag').value;
-
-            const newlyCreatedObj = {
-                id: Date.now(),
-                title,
-                price,
-                oldPrice,
-                badge,
-                img
-            };
-
-            globalCatalog.push(newlyCreatedObj);
-            localStorage.setItem('pj_stored_inventory_data', JSON.stringify(globalCatalog));
-            syncCatalogLayoutDisplay();
-
-            document.getElementById('addTitle').value = '';
-            document.getElementById('addPrice').value = '';
-            document.getElementById('addOldPrice').value = '';
-            document.getElementById('addImg').value = '';
-        }
-
-        function purgeProductItem(id) {
-            if(confirm("Permanently discard item listing off global stock matrix?")) {
-                globalCatalog = globalCatalog.filter(p => p.id !== id);
-                localStorage.setItem('pj_stored_inventory_data', JSON.stringify(globalCatalog));
-                syncCatalogLayoutDisplay();
-            }
-        }
-
-        function toggleCartDrawer(openStatus) {
-            const drawer = document.getElementById('checkoutDrawer');
-            if(openStatus) {
-                drawer.classList.add('active');
-            } else {
-                drawer.classList.remove('active');
-                resetCheckoutFormState();
-            }
-        }
+        function toggleCartDrawer(status) { document.getElementById('checkoutDrawer').classList.toggle('active', status); }
 
         function injectItemToCart(itemId) {
-            const sourceItem = globalCatalog.find(p => p.id === itemId);
-            if (!sourceItem) return;
-
-            const preExistingCartMatch = dynamicCart.find(c => c.id === itemId);
-            if(preExistingCartMatch) {
-                preExistingCartMatch.qty += 1;
-            } else {
-                dynamicCart.push({
-                    id: sourceItem.id,
-                    title: sourceItem.title,
-                    price: sourceItem.price,
-                    qty: 1
-                });
-            }
-            refreshCartDisplayMetrics();
+            const item = globalCatalog.find(p => p.id === itemId);
+            dynamicCart.push({ ...item, qty: 1 });
+            document.getElementById('globalCartCounter').innerText = dynamicCart.length;
             toggleCartDrawer(true);
         }
 
-        function removeCartUnit(itemId) {
-            dynamicCart = dynamicCart.filter(c => c.id !== itemId);
-            refreshCartDisplayMetrics();
-        }
-
-        function refreshCartDisplayMetrics() {
-            const viewWrap = document.getElementById('drawerItemsWrap');
-            const totalDisplay = document.getElementById('drawerCalculatedTotal');
-            const countBadge = document.getElementById('globalCartCounter');
-
-            viewWrap.innerHTML = '';
-            let cumulativePiecesCount = 0;
-            let financialSumTotal = 0;
-
-            if(dynamicCart.length === 0) {
-                viewWrap.innerHTML = `<p style="text-align:center; font-family:sans-serif; color:#7A6E70; margin-top:30px;">Your shopping box is empty.</p>`;
-                resetCheckoutFormState();
-            }
-
-            dynamicCart.forEach(unit => {
-                cumulativePiecesCount += unit.qty;
-                financialSumTotal += (unit.price * unit.qty);
-
-                const itemRow = document.createElement('div');
-                itemRow.className = 'cart-product-row';
-                itemRow.innerHTML = `
-                    <div class="cart-product-info">
-                        <h4>${unit.title}</h4>
-                        <p>₹${unit.price} &times; ${unit.qty}</p>
-                    </div>
-                    <button class="cart-product-delete" onclick="removeCartUnit(${unit.id})">Delete</button>
-                `;
-                viewWrap.appendChild(itemRow);
-            });
-
-            // Calculate extra delivery cost if selected
-            const deliveryElement = document.getElementById('deliverySpeed');
-            if (checkoutPhaseActivated && deliveryElement && deliveryElement.value === 'NextDay') {
-                financialSumTotal += 50; 
-            }
-
-            countBadge.innerText = cumulativePiecesCount;
-            totalDisplay.innerText = `₹${financialSumTotal}`;
-        }
-
-        // Listens to delivery dropdown changes to update live total
-        document.getElementById('deliverySpeed')?.addEventListener('change', refreshCartDisplayMetrics);
-
         function handleCheckoutProcessing() {
-            if(dynamicCart.length === 0) {
-                alert("Please add items into your shopping box container before executing checkout protocols.");
-                return;
-            }
-
             const moduleForm = document.getElementById('checkoutFormSection');
-            const actionButton = document.getElementById('checkoutSubmitActionBtn');
-
             if (!checkoutPhaseActivated) {
                 checkoutPhaseActivated = true;
                 moduleForm.style.display = 'block';
-                actionButton.innerText = "Place Order via WhatsApp";
-                actionButton.style.backgroundColor = "#7A0016"; // Keeping theme color identical
-                refreshCartDisplayMetrics(); // Refresh total to apply standard/premium delivery logic
             } else {
-                const addressValue = document.getElementById('shippingAddress').value.trim();
-                const phoneValue = document.getElementById('recipientPhone').value.trim();
-                const paymentMethodSelected = document.getElementById('paymentOption').value;
-                const deliverySelect = document.getElementById('deliverySpeed');
-                const deliveryMode = deliverySelect.options[deliverySelect.selectedIndex].text;
-
-                if(!addressValue || !phoneValue) {
-                    alert("Please provide valid shipping details and smartphone destination information.");
-                    return;
-                }
-
-                // Compile WhatsApp Message
-                let orderMessage = `*✨ NEW RAKHI ORDER ✨*\n\n`;
-                orderMessage += `*🛍️ Order Items:*\n`;
-                
-                let orderTotal = 0;
-                dynamicCart.forEach(unit => {
-                    orderMessage += `▫️ ${unit.qty}x ${unit.title} - ₹${unit.price * unit.qty}\n`;
-                    orderTotal += (unit.price * unit.qty);
-                });
-
-                if (deliverySelect.value === 'NextDay') {
-                    orderTotal += 50;
-                }
-
-                orderMessage += `\n*💵 Total Amount:* ₹${orderTotal}\n`;
-                orderMessage += `*💳 Payment Route:* ${paymentMethodSelected}\n`;
-                orderMessage += `*🚚 Delivery Mode:* ${deliveryMode}\n\n`;
-                
-                orderMessage += `*📍 Customer Details:*\n`;
-                orderMessage += `Phone: ${phoneValue}\n`;
-                orderMessage += `Address: ${addressValue}`;
-
-                // Using the specific phone number given 
-                const whatsappNumber = "919193147040"; 
-                const encodedMessage = encodeURIComponent(orderMessage);
-                const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-
-                // Redirect user to WhatsApp
-                window.open(whatsappURL, '_blank');
-
-                alert(`Order processing initialized via WhatsApp!\n\nDestination: ${addressValue}\nContact: ${phoneValue}\n\nYour premium Rakhi package will be dispatched shortly!`);
-                
-                // Reset cart
-                dynamicCart = [];
-                refreshCartDisplayMetrics();
-                toggleCartDrawer(false);
+                alert("Proceeding to WhatsApp...");
             }
-        }
-
-        function resetCheckoutFormState() {
-            checkoutPhaseActivated = false;
-            document.getElementById('checkoutFormSection').style.display = 'none';
-            document.getElementById('shippingAddress').value = '';
-            document.getElementById('recipientPhone').value = '';
-            const actionBtn = document.getElementById('checkoutSubmitActionBtn');
-            actionBtn.innerText = "Proceed to Checkout";
-            actionBtn.style.backgroundColor = "var(--teal-peacock)";
         }
 
         syncCatalogLayoutDisplay();
