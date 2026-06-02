@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- --- SECURITY ENHANCEMENTS --- -->
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta name="referrer" content="no-referrer-when-downgrade">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
@@ -12,12 +13,12 @@
     <style>
         /* --- DYNAMIC INDIAN FESTIVAL VISUAL THEME --- */
         :root {
-            --primary-color: #7A0016; /* Deep Royal Festive Maroon-Red */
-            --accent-gold: #E5A93C; /* Bright Metallic Gold */
-            --warm-shimmer: #F4E2C7; /* Elegant Base Silk Gold tone */
-            --teal-peacock: #007A78; /* Brand Accent from Logo */
-            --dark-velvet: #2A0006; /* Deep contrast color */
-            --text-main: #3D2024; /* Warm readable charcoal-crimson */
+            --primary-color: #7A0016;    /* Deep Royal Festive Maroon-Red */
+            --accent-gold: #E5A93C;     /* Bright Metallic Gold */
+            --warm-shimmer: #F4E2C7;    /* Elegant Base Silk Gold tone */
+            --teal-peacock: #007A78;    /* Brand Accent from Logo */
+            --dark-velvet: #2A0006;     /* Deep contrast color */
+            --text-main: #3D2024;       /* Warm readable charcoal-crimson */
         }
 
         * {
@@ -74,18 +75,13 @@
         .top-ticker {
             background-color: var(--primary-color);
             color: #FFFFFF;
-            padding: 8px 0px;
+            text-align: center;
+            padding: 8px 10px;
             font-size: 0.85rem;
             font-family: sans-serif;
             font-weight: bold;
             letter-spacing: 1px;
             border-bottom: 2px solid var(--accent-gold);
-            overflow: hidden;
-        }
-        
-        .top-ticker marquee {
-            display: block;
-            line-height: 1.2;
         }
 
         /* Navigation Bar Layout */
@@ -683,8 +679,7 @@
                 font-size: 1rem;
             }
             .live-rakhi-side {
-                width: 35px;
-                /* Smaller layout icons on mobile screens */
+                width: 35px; /* Smaller layout icons on mobile screens */
                 opacity: 0.15;
             }
         }
@@ -712,6 +707,8 @@
 </head>
 <body>
 
+    <!-- --- LIVE FLOATING THEME DECORATIONS --- -->
+    <!-- Safe vector graphics acting as live decorative floating background objects -->
     <svg class="live-rakhi-side rakhi-left-1" viewBox="0 0 100 100">
         <circle cx="50" cy="50" r="30" fill="#7A0016" stroke="#E5A93C" stroke-width="3"/>
         <circle cx="50" cy="50" r="15" fill="#E5A93C"/>
@@ -733,12 +730,13 @@
         <line x1="0" y1="50" x2="100" y2="50" stroke="#7A0016" stroke-width="2"/>
     </svg>
 
-    <div class="top-ticker">
-        <marquee behavior="scroll" direction="left" scrollamount="5">✨ PJ RAKHI HANDCRAFTED TRADITION LIVE • CELEBRATE RAKSHA BANDHAN 2026 — PREMIUM HANDCRAFTED RAKHIS ✨</marquee>
-    </div>
+    <!-- Red Header Announcement Strip -->
+    <div class="top-ticker">✨ CELEBRATE RAKSHA BANDHAN 2026 — PREMIUM HANDCRAFTED RAKHIS ✨</div>
 
+    <!-- Header Navigation Interface -->
     <header>
         <div class="nav-container">
+            <!-- Top Left Logo Block (UNTOUCHED) -->
             <a href="#" class="brand-logo-block">
                 <div class="css-logo-badge">
                     <span class="css-logo-text">PJ</span>
@@ -762,6 +760,7 @@
         </div>
     </header>
 
+    <!-- Hero Identity Showcase Section -->
     <section class="hero-banner">
         <div class="hero-art-icon">
             <svg viewBox="0 0 400 120" width="100%" height="80">
@@ -781,13 +780,16 @@
         <a href="#collection" class="cta-btn" style="background-color: var(--accent-gold); color: var(--dark-velvet); padding: 12px 28px; text-decoration: none; font-weight: bold; font-family: sans-serif; border-radius: 20px; display: inline-block;">Browse Catalog</a>
     </section>
 
+    <!-- Showcase Grid Display -->
     <section class="main-showcase" id="collection">
         <h2 class="section-headline">Festive Highlights</h2>
         
         <div class="showcase-grid" id="catalogGrid">
-            </div>
+            <!-- Dynamic data drops down here -->
+        </div>
     </section>
 
+    <!-- Side-sliding Shopping Box Cart Drawer -->
     <div class="cart-slide-drawer" id="checkoutDrawer">
         <div class="drawer-header">
             <h3>Your Shopping Box</h3>
@@ -797,6 +799,7 @@
         <div class="drawer-scroll-area">
             <div id="drawerItemsWrap"></div>
 
+            <!-- Payment & Shipping Input Fields -->
             <div class="checkout-modular-expansion" id="checkoutFormSection">
                 <h4>Delivery & Payment Route</h4>
                 <div class="form-field-set">
@@ -816,7 +819,7 @@
                 </div>
                 <div class="form-field-set">
                     <label for="deliverySpeed">Delivery Mode</label>
-                    <select id="deliverySpeed" onchange="refreshCartDisplayMetrics()">
+                    <select id="deliverySpeed">
                         <option value="Standard">Standard Express (Free Delivery)</option>
                         <option value="NextDay">Next-Day Premium Delivery (+₹50)</option>
                     </select>
@@ -833,6 +836,7 @@
         </div>
     </div>
 
+    <!-- Hidden Owner Access Panel Control Panel -->
     <section class="dashboard-panel" id="ownerConsolePanel">
         <h2>Owner Inventory Control Station</h2>
         <form onsubmit="insertNewProductItem(event)">
@@ -867,13 +871,15 @@
         </form>
     </section>
 
+    <!-- Footer Block -->
     <footer>
         <div class="footer-details-line">
-            Support Hotline: <a href="tel:+919193147040">+91 9193147040</a> | Base Operations: Agra, India
+            Support Hotline: <a href="tel:+9193147040">91+9193147040</a> | Base Operations: Agra, India
         </div>
         <p>&copy; 2026 PJ Plus Rakhi. Premium Handcrafted Trademarks.</p>
     </footer>
 
+    <!-- --- CORE APPLICATION ENGINE --- -->
     <script>
         const baselineProductsData = [
             {
@@ -901,6 +907,7 @@
                 img: ""
             }
         ];
+
         let globalCatalog = JSON.parse(localStorage.getItem('pj_stored_inventory_data'));
         if (!globalCatalog || globalCatalog.length === 0) {
             globalCatalog = baselineProductsData;
@@ -960,6 +967,7 @@
 
         function insertNewProductItem(event) {
             event.preventDefault();
+            
             const title = document.getElementById('addTitle').value;
             const price = parseInt(document.getElementById('addPrice').value);
             const oldPrice = document.getElementById('addOldPrice').value ? parseInt(document.getElementById('addOldPrice').value) : null;
@@ -977,6 +985,7 @@
 
             globalCatalog.push(newlyCreatedObj);
             localStorage.setItem('pj_stored_inventory_data', JSON.stringify(globalCatalog));
+            
             syncCatalogLayoutDisplay();
 
             document.getElementById('addTitle').value = '';
@@ -1035,6 +1044,7 @@
             viewWrap.innerHTML = '';
             let cumulativePiecesCount = 0;
             let financialSumTotal = 0;
+
             if(dynamicCart.length === 0) {
                 viewWrap.innerHTML = `<p style="text-align:center; font-family:sans-serif; color:#7A6E70; margin-top:30px;">Your shopping box is empty.</p>`;
                 resetCheckoutFormState();
@@ -1055,12 +1065,6 @@
                 `;
                 viewWrap.appendChild(itemRow);
             });
-            
-            // Check delivery mode additions dynamically
-            const deliveryElement = document.getElementById('deliverySpeed');
-            if (deliveryElement && deliveryElement.value === "NextDay" && dynamicCart.length > 0) {
-                financialSumTotal += 50;
-            }
 
             countBadge.innerText = cumulativePiecesCount;
             totalDisplay.innerText = `₹${financialSumTotal}`;
@@ -1084,50 +1088,14 @@
                 const addressValue = document.getElementById('shippingAddress').value.trim();
                 const phoneValue = document.getElementById('recipientPhone').value.trim();
                 const paymentMethodSelected = document.getElementById('paymentOption').value;
-                const deliverySpeedSelected = document.getElementById('deliverySpeed').value;
 
                 if(!addressValue || !phoneValue) {
                     alert("Please provide valid shipping details and smartphone destination information.");
                     return;
                 }
 
-                // Compile structured data for your phone message via WhatsApp Click-to-Chat API link
-                let itemsSummary = "";
-                let subTotal = 0;
-                dynamicCart.forEach(item => {
-                    itemsSummary += `• ${item.title} (Qty: ${item.qty}) - ₹${item.price * item.qty}\n`;
-                    subTotal += (item.price * item.qty);
-                });
-
-                let totalFinalBill = subTotal;
-                if (deliverySpeedSelected === "NextDay") {
-                    totalFinalBill += 50;
-                }
-
-                // Structure a clean text format
-                const orderMessage = `*🛍️ NEW ORDER RECEIVED - PJ PLUS RAKHI*\n` +
-                                     `=========================\n\n` +
-                                     `*👤 CUSTOMER DETAILS:*\n` +
-                                     `📝 *Address:* ${addressValue}\n` +
-                                     `📞 *Phone Number:* ${phoneValue}\n\n` +
-                                     `*📦 ORDER ORDERED ITEMS:*\n` +
-                                     `${itemsSummary}\n` +
-                                     `*💳 ROUTE INFO:*\n` +
-                                     `• *Payment Mode:* ${paymentMethodSelected}\n` +
-                                     `• *Delivery Mode:* ${deliverySpeedSelected}\n` +
-                                     `=========================\n` +
-                                     `*💰 TOTAL BILL:* ₹${totalFinalBill}\n` +
-                                     `=========================`;
-
-                // Prepend target WhatsApp API target configuration number 919193147040
-                const targetNumber = "919193147040";
-                const apiLinkUrl = `https://api.whatsapp.com/send?phone=${targetNumber}&text=${encodeURIComponent(orderMessage)}`;
+                alert(`Order Booked Successfully!\n\nDestination: ${addressValue}\nContact: ${phoneValue}\nPayment Route chosen: ${paymentMethodSelected}\n\nYour premium Rakhi package will be dispatched shortly!`);
                 
-                alert("Order Booked Successfully! Opening WhatsApp to send your full address and billing route breakdown details directly to us...");
-                
-                // Open WhatsApp context API window protocol to deliver item breakdown instantly
-                window.open((apiLinkUrl, '_blank');
-
                 dynamicCart = [];
                 refreshCartDisplayMetrics();
                 toggleCartDrawer(false);
